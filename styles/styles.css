@@ -1,0 +1,53 @@
+
+:root {
+  /* Color */
+  --paper: #fbf7ef;        /* page background */
+  --paper-raised: #fffdf8; /* cards, header */
+  --ink: #1f2a24;          /* main text */
+  --ink-muted: #55605a;    /* secondary text */
+  --line: #e2d8c6;         /* borders */
+  --brand: #1f5c46;        /* primary green */
+  --brand-strong: #174837; /* hover */
+  --on-brand: #ffffff;     /* text on brand */
+  --accent: #e8704f;       /* highlight / buttons */
+  --focus: #a83e26;        /* focus ring */
+  /* Fonts */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141a17;
+    --paper-raised: #1c2420;
+    --ink: #efe9dd;
+    --ink-muted: #a9b1ab;
+    --line: #2f3a34;
+    --brand: #7cc7a4;
+    --brand-strong: #9ad6b9;
+    --on-brand: #10241b;
+    --accent: #f08a6e;
+    --focus: #f4a38c;
+  }
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1, h2 { font-family: var(--font-display); font-weight: 600; }
+
+a { color: var(--brand); }
+a:hover { color: var(--brand-strong); }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+img { max-width: 100%; height: auto; }
