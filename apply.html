@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="some thing here">
-  <meta name="author" content="name">
-  <title>This page of ..... </title>
+  <meta name="description" content="Job application form for Edbridge">
+  <meta name="author" content="Edbridge">
+  <title>Apply - Edbridge</title>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Fraunces:opsz,wght@9..144,600&amp;display=swap">
 
+  <!-- External CSS -->
   <link rel="stylesheet" href="styles/styles.css">
-
-  <style>
-  </style>
 </head>
+
 <body>
-  <!-- Header and nav bar -->
+  <!-- Header and navigation bar -->
   <header>
     <a href="index.html">Edbridge</a>
+
     <nav aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -30,13 +31,231 @@
     </nav>
   </header>
 
-  <!-- Main content of your -->
+  <!-- Main content -->
   <main>
-    <h1>Apply Form</h1>
-    <p>Content</p>
+    <h1>Job Application Form</h1>
+
+    <p>Please complete all required fields to apply for a position at Edbridge.</p>
+
+    <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+
+      <!-- Job reference number -->
+      <div class="form-row">
+        <label for="job_reference">Job reference number:</label>
+        <input
+          type="text"
+          id="job_reference"
+          name="job_reference"
+          pattern="[A-Za-z0-9]{5}"
+          minlength="5"
+          maxlength="5"
+          title="Enter exactly 5 alphanumeric characters."
+          required>
+      </div>
+
+      <!-- First name -->
+      <div class="form-row">
+        <label for="first_name">First name:</label>
+        <input
+          type="text"
+          id="first_name"
+          name="first_name"
+          pattern="[A-Za-z ]{1,20}"
+          maxlength="20"
+          title="Enter up to 20 alphabetic characters."
+          autocomplete="given-name"
+          required>
+      </div>
+
+      <!-- Last name -->
+      <div class="form-row">
+        <label for="last_name">Last name:</label>
+        <input
+          type="text"
+          id="last_name"
+          name="last_name"
+          pattern="[A-Za-z ]{1,20}"
+          maxlength="20"
+          title="Enter up to 20 alphabetic characters."
+          autocomplete="family-name"
+          required>
+      </div>
+
+      <!-- Date of birth -->
+      <div class="form-row">
+        <label for="date_of_birth">Date of birth:</label>
+        <input
+          type="text"
+          id="date_of_birth"
+          name="date_of_birth"
+          placeholder="dd/mm/yyyy"
+          pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
+          title="Enter the date in dd/mm/yyyy format."
+          autocomplete="bday"
+          required>
+      </div>
+
+      <!-- Gender -->
+      <fieldset class="form-row">
+        <legend>Gender:</legend>
+
+        <div class="choice-group">
+          <label for="gender_male">
+            <input type="radio" id="gender_male" name="gender" value="Male" required>
+            Male
+          </label>
+
+          <label for="gender_female">
+            <input type="radio" id="gender_female" name="gender" value="Female">
+            Female
+          </label>
+
+          <label for="gender_other">
+            <input type="radio" id="gender_other" name="gender" value="Other">
+            Other
+          </label>
+
+          <label for="gender_prefer_not">
+            <input type="radio" id="gender_prefer_not" name="gender" value="Prefer not to say">
+            Prefer not to say
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Street address -->
+      <div class="form-row">
+        <label for="street_address">Street address:</label>
+        <input
+          type="text"
+          id="street_address"
+          name="street_address"
+          maxlength="40"
+          autocomplete="street-address"
+          required>
+      </div>
+
+      <!-- Suburb or town -->
+      <div class="form-row">
+        <label for="suburb">Suburb/Town:</label>
+        <input
+          type="text"
+          id="suburb"
+          name="suburb"
+          maxlength="40"
+          autocomplete="address-level2"
+          required>
+      </div>
+
+      <!-- State -->
+      <div class="form-row">
+        <label for="state">State:</label>
+        <select id="state" name="state" autocomplete="address-level1" required>
+          <option value="">Select a state or territory</option>
+          <option value="VIC">VIC</option>
+          <option value="NSW">NSW</option>
+          <option value="QLD">QLD</option>
+          <option value="NT">NT</option>
+          <option value="WA">WA</option>
+          <option value="SA">SA</option>
+          <option value="TAS">TAS</option>
+          <option value="ACT">ACT</option>
+        </select>
+      </div>
+
+      <!-- Postcode -->
+      <div class="form-row">
+        <label for="postcode">Postcode:</label>
+        <input
+          type="text"
+          id="postcode"
+          name="postcode"
+          inputmode="numeric"
+          pattern="[0-9]{4}"
+          maxlength="4"
+          title="Enter exactly 4 digits."
+          autocomplete="postal-code"
+          required>
+      </div>
+
+      <!-- Email -->
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="email"
+          required>
+      </div>
+
+      <!-- Phone number -->
+      <div class="form-row">
+        <label for="phone">Phone number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          inputmode="numeric"
+          pattern="[0-9]{8,12}"
+          minlength="8"
+          maxlength="12"
+          title="Enter 8 to 12 digits without spaces."
+          autocomplete="tel"
+          required>
+      </div>
+
+      <!-- Skill list -->
+      <fieldset class="form-row">
+        <legend>Skill list:</legend>
+
+        <div class="choice-group">
+          <label for="skill_html">
+            <input type="checkbox" id="skill_html" name="skills[]" value="HTML">
+            HTML
+          </label>
+
+          <label for="skill_css">
+            <input type="checkbox" id="skill_css" name="skills[]" value="CSS">
+            CSS
+          </label>
+
+          <label for="skill_javascript">
+            <input type="checkbox" id="skill_javascript" name="skills[]" value="JavaScript">
+            JavaScript
+          </label>
+
+          <label for="skill_php">
+            <input type="checkbox" id="skill_php" name="skills[]" value="PHP">
+            PHP
+          </label>
+
+          <label for="skill_mysql">
+            <input type="checkbox" id="skill_mysql" name="skills[]" value="MySQL">
+            MySQL
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Other skills -->
+      <div class="form-row">
+        <label for="other_skills">Other skills:</label>
+        <textarea
+          id="other_skills"
+          name="other_skills"
+          rows="5"
+          cols="40"></textarea>
+      </div>
+
+      <!-- Form buttons -->
+      <div class="form-actions">
+        <button type="submit">Submit Application</button>
+        <button type="reset">Clear Form</button>
+      </div>
+
+    </form>
   </main>
 
-  <!-- ===== Footer ===== -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Edbridge &mdash; COS10026 Web Technology Project.</p>
   </footer>
