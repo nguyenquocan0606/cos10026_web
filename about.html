@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="some thing here">
-  <meta name="author" content="name">
-  <title>This page of ..... </title>
-  <!-- Fonts -->
+  <meta name="description" content="Meet W3bb, the four students behind the Edbridge education careers website.">
+  <meta name="author" content="W3bb">
+  <title>About W3bb | Edbridge</title>
+  <!-- Shared fonts and external stylesheet. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Fraunces:opsz,wght@9..144,600&amp;display=swap">
-
   <link rel="stylesheet" href="styles/styles.css">
-
+  <!-- Small embedded CSS example -->
   <style>
+    .about-intro { max-width: 65ch; }
   </style>
 </head>
-<body>
-  <!-- Header and nav bar -->
+<body class="about-site">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
     <a href="index.html">Edbridge</a>
     <nav aria-label="Main">
@@ -25,18 +25,129 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="jobs.html">Jobs</a></li>
         <li><a href="apply.html">Apply</a></li>
-        <li><a href="about.html">About us</a></li>
+        <li><a href="about.html" aria-current="page">About us</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main content of your -->
-  <main>
-    <h1>About me</h1>
-    <p>Content</p>
+  <main id="main-content" class="about-page" tabindex="-1">
+    <div class="about-intro">
+      <!-- Inline CSS example-->
+      <p class="eyebrow" style="letter-spacing: 0.08em;">THE PEOPLE BEHIND EDBRIDGE</p>
+      <h1>Four people. One shared project.</h1>
+      <p>We are W3bb, a team of COS10026 students in Hanoi building Edbridge, an education careers website.</p>
+    </div>
+
+    <section aria-labelledby="group-heading">
+      <h2 id="group-heading">Our group</h2>
+      <!-- Nested list: the class belongs to the group. -->
+      <ul class="group-details">
+        <li><strong>W3bb</strong>
+          <ul>
+            <li>Unit: COS10026</li>
+            <li>Class: Hanoi Class 2</li>
+            <li>Class day and time: Friday Morning</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="members-heading">
+      <h2 id="members-heading">Meet the team</h2>
+      <p>Each member brings a different contribution to our shared website.</p>
+      <!-- Each definition pairs a member with their contribution and personal details-->
+      <dl class="member-list">
+        <div class="member-card">
+          <dt>Tran Trung Tin</dt>
+          <dd>
+            <p class="student-id">Student ID: 106200136</p>
+            <p><strong>Contributions:</strong> Jira setup and About page.</p>
+            <p class="quote-content">First-language quote and English translation: To be provided.</p>
+          </dd>
+        </div>
+        <div class="member-card">
+          <dt>Nguyen Quoc An</dt>
+          <dd>
+            <p class="student-id">Student ID: 105550652</p>
+            <p><strong>Contributions:</strong> GitHub deployment, Index page.</p>
+            <p class="quote-content">First-language quote and English translation: To be provided.</p>
+          </dd>
+        </div>
+        <div class="member-card">
+          <dt>Nguyen Chi Hien</dt>
+          <dd>
+            <p class="student-id">Student ID: 106393625</p>
+            <p><strong>Contributions:</strong> Jobs pages, Check navigation and layout.</p>
+            <p class="quote-content">90% of gamblers quit right before they're about to hit big!</p>
+          </dd>
+        </div>
+        <div class="member-card">
+          <dt>Do Dinh Phu</dt>
+          <dd>
+            <p class="student-id">Student ID: 105559808</p>
+            <p><strong>Contributions:</strong> Apply pages, Validate pages and link.</p>
+            <p class="quote-content">You squash a bug and 100 more come out~</p>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="photo-heading">
+      <h2 id="photo-heading">Together as W3bb</h2>
+      <figure class="group-photo">
+        <!-- Pending photo -->
+        <div class="photo-placeholder">
+          <p><strong>Our group photo is coming soon.</strong></p>
+          <p>One photo of the four of us, together.</p>
+        </div>
+        <figcaption>W3bb &mdash; COS10026 Hanoi Class 2. Group photograph to be provided.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="facts-heading">
+      <h2 id="facts-heading">Beyond the code</h2>
+      <p id="facts-help">Our personal fun facts are coming soon. On smaller screens, scroll the table sideways to see every column.</p>
+      <div class="table-scroll" role="region" aria-labelledby="facts-heading" aria-describedby="facts-help" tabindex="0">
+        <table class="fun-facts">
+          <caption>W3bb fun facts</caption>
+          <thead>
+            <tr>
+              <th scope="col">Member</th>
+              <th scope="col">Dream job</th>
+              <th scope="col">Coding snack</th>
+              <th scope="col">Hometown</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Tran Trung Tin</th>
+              <td>🔐 Security engineer/analyst</td><td>Banh Mi</td><td>Hanoi</td>
+            </tr>
+            <tr>
+              <th scope="row">Nguyen Quoc An</th>
+              <td>💻 AI Engineer</td><td>Bugs</td><td>Hanoi</td>
+            </tr>
+            <tr>
+              <th scope="row">Nguyen Chi Hien</th>
+              <td>🎰 Gambler </td><td>Chips</td><td>Hanoi</td>
+            </tr>
+            <tr>
+              <th scope="row">Do Dinh Phu</th>
+              <td>🎮 Game programmer/tester</td><td>Potato Chips</td><td>Nam Dinh</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="inclusion-statement" aria-labelledby="inclusion-heading">
+      <h2 id="inclusion-heading">Respect and inclusion in education</h2>
+      <p>We recognise Aboriginal and Torres Strait Islander peoples as the First Peoples of Australia and respect their continuing connections to Country, cultures and communities.</p>
+      <p>As a student team in Hanoi developing an education careers website, we want Edbridge to reflect respect for the people and communities that education serves. We welcome Aboriginal and Torres Strait Islander applicants and value the knowledge and perspectives they bring to education.</p>
+      <p>For this project, our commitment means using respectful language, making career information accessible, and avoiding stereotypes in how we describe people and roles. Edbridge is a student project; this statement expresses our team's values and does not claim a community partnership.</p>
+    </section>
   </main>
 
-  <!-- ===== Footer ===== -->
   <footer>
     <p>&copy; 2026 Edbridge &mdash; COS10026 Web Technology Project.</p>
   </footer>
