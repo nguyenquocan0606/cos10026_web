@@ -1,36 +1,55 @@
 
 :root {
   /* Color */
-  --paper: #fbf7ef;        /* page background */
-  --paper-raised: #fffdf8; /* cards, header */
-  --ink: #1f2a24;          /* main text */
-  --ink-muted: #55605a;    /* secondary text */
-  --line: #e2d8c6;         /* borders */
-  --brand: #1f5c46;        /* primary green */
-  --brand-strong: #174837; /* hover */
-  --on-brand: #ffffff;     /* text on brand */
-  --accent: #e8704f;       /* highlight / buttons */
-  --focus: #a83e26;        /* focus ring */
+  --paper: #fbf7ef;
+  --paper-raised: #fffdf8;
+  --paper-sunk: #f3ecdf;
+  --ink: #1f2a24;
+  --ink-muted: #55605a;
+  --line: #e2d8c6;
+  --line-strong: #857c6b;
+  --brand: #1f5c46;
+  --brand-strong: #174837;
+  --brand-tint: #dcebe3;
+  --on-brand: #ffffff;
+  --accent: #e8704f;
+  --on-accent: #1f2a24;
+  --accent-text: #a83e26;
+  --accent-tint: #fbe3da;
+  --sun: #e9b949;
+  --on-sun: #1f2a24;
+  --focus: #a83e26;
+  --danger: #b42318;
+  --danger-tint: #fde8e6;
   /* Fonts */
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
 }
 
 /* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
+  :root:has(#theme-toggle:checked) {
     --paper: #141a17;
     --paper-raised: #1c2420;
+    --paper-sunk: #232d28;
     --ink: #efe9dd;
     --ink-muted: #a9b1ab;
     --line: #2f3a34;
+    --line-strong: #76827a;
     --brand: #7cc7a4;
     --brand-strong: #9ad6b9;
+    --brand-tint: #1e3a2e;
     --on-brand: #10241b;
     --accent: #f08a6e;
+    --on-accent: #1f120e;
+    --accent-text: #f4a38c;
+    --accent-tint: #3a231c;
+    --sun: #e0b04a;
+    --on-sun: #1a1408;
     --focus: #f4a38c;
+    --danger: #f97066;
+    --danger-tint: #3b1a17;
   }
-}
+
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -51,3 +70,55 @@ a:hover { color: var(--brand-strong); }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
 img { max-width: 100%; height: auto; }
+
+.container {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--paper);
+}
+
+
+.Edbridge {
+  text-decoration: none;
+  font-family:'Times New Roman', Times, serif
+}
+
+header nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--brand);
+  color: var(--on-brand);
+}
+
+nav a:hover {
+  background-color: var(--brand-tint);
+  color: var(--ink);
+}
