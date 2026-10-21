@@ -13,6 +13,43 @@
 
   <link rel="stylesheet" href="styles/styles.css">
 
+          <style>
+          .a1_table_job_stage {
+            width: 100%;
+            border: 1px solid var(--line-strong);
+            border-collapse: collapse;
+          }
+
+          .a1_table_job_stage caption {
+            font-weight: bold;
+            text-align: left;
+            border: 1px solid var(--line-strong);
+            border-bottom: none ;
+            padding: 0.5rem 1rem ;
+          }
+
+          .a1_table_job_stage th, .a1_table_job_stage td {
+            border: 1px solid var(--line-strong);
+            padding: 0.5rem 1rem;
+          }
+
+          .a1_table_job_stage th {
+            text-align: left;
+            background-color: var(--col-strong);
+          }
+
+          .a1_table_highlight {
+            background-color: var(--paper-raised);
+          }
+
+          .a1_table_job_stage tr:hover td {
+            background-color: var(--brand-tint);
+          }
+
+          .a1_table_job_stage tbody tr:last-child th, .a1_table_job_stage tbody tr:last-child td {
+            background-color: var(--paper-raised);
+          }
+        </style>
 </head>
 <body>
   <!-- Header and nav bar -->
@@ -90,11 +127,11 @@
       </div>
     </section>
 
-    <section class="1_how">
+    <section class="a1_how">
       <div class="container">
         <h2>How we hire</h2>
         <p>Our process is short and transparent. Tell us in your application if you need any adjustments at any stage.</p>
-        <table class="1_table_job_stage">
+        <table class="a1_table_job_stage">
           <caption>Edbridge hiring process, step by step</caption>
           <thead>
             <tr>
@@ -106,35 +143,36 @@
           </thead>
 
           <tbody>
-            <tr>
+            <tr class="a1_table_highlight">
               <th scope="row" >Apply</th>
               <td>Online form</td>
               <td>Choose a job reference number and tell us about your skills.</td>
               <td>10 minutes</td>
             </tr>
-            <tr>
+            <tr >
               <th scope="row" rowspan="2" >Interviews</th>
               <td>Team chat</td>
               <td>A relaxed video call with two people from the team you would join.</td>
               <td>30 minutes</td>
             </tr>
-            <tr>
+            <tr class="a1_table_highlight">
               <td>Practical task</td>
               <td>A small, paid take-home task based on a real lesson page.</td>
               <td>2 hours</td>
             </tr>
-            <tr>
+            <tr >
               <th scope="row" >Offer</th>
               <td>Decision</td>
               <td>We call you with a decision and feedback, whatever the outcome.</td>
               <td>Within 1 week</td>
             </tr>
             <tr>
-              <th class="1_colspan_3" scope="row" colspan="3">From applicant to offer</th>
+              <th class="a1_table_highlight" scope="row" colspan="3">From applicant to offer</th>
               <td>3–4 weeks</td>
             </tr>
           </tbody>
         </table>
+
       </div>
     </section>
   </main>

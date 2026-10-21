@@ -21,6 +21,7 @@
   --focus: #a83e26;
   --danger: #b42318;
   --danger-tint: #fde8e6;
+  --col-strong: #f3ecdf;
   /* Fonts */
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
@@ -335,4 +336,17 @@ h2 {
   font-size: 1.25rem;
   margin-bottom: 0;
   padding: 4px;
+}
+
+.a1_how h2 {
+  margin-top: 5rem;
+  padding-top: 1.75rem;
+  border-top: 2px solid var(--ink) ;
+  margin-bottom: 0.75rem;
+  
+}
+
+.a1_how p {
+  margin-top: 0;
+  font-family: var(--font-sans);
 }
