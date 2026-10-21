@@ -16,18 +16,24 @@
     .about-intro { max-width: 65ch; }
   </style>
 </head>
-<body class="about-site">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header>
-    <a href="index.html">Edbridge</a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
-        <li><a href="apply.html">Apply</a></li>
-        <li><a href="about.html" aria-current="page">About us</a></li>
-      </ul>
-    </nav>
+    <body class="about-site">
+    <header>
+    <div class="container">
+      <a href="index.html" class="Edbridge">Edbridge</a>
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+        Dark Mode
+      </label>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html" aria-current="page">About us</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content" class="about-page" tabindex="-1">
@@ -62,7 +68,8 @@
           <dd>
             <p class="student-id">Student ID: 106200136</p>
             <p><strong>Contributions:</strong> Jira setup and About page.</p>
-            <p class="quote-content">First-language quote and English translation: To be provided.</p>
+            <p class="quote-content">i feel like there is a sleep in me that needs to be slept but 
+              eachtime i sleep i don't sleep that sleep.</p>
           </dd>
         </div>
         <div class="member-card">
@@ -70,7 +77,7 @@
           <dd>
             <p class="student-id">Student ID: 105550652</p>
             <p><strong>Contributions:</strong> GitHub deployment, Index page.</p>
-            <p class="quote-content">First-language quote and English translation: To be provided.</p>
+            <p class="quote-content">Life is like coding: Every bug is a lesson, every fix is a step forward.</p>
           </dd>
         </div>
         <div class="member-card">
@@ -100,13 +107,13 @@
           <p><strong>Our group photo is coming soon.</strong></p>
           <p>One photo of the four of us, together.</p>
         </div>
-        <figcaption>W3bb &mdash; COS10026 Hanoi Class 2. Group photograph to be provided.</figcaption>
+        <figcaption>W3bb - COS10026 Hanoi Class 2. Group photograph to be provided.</figcaption>
       </figure>
     </section>
 
     <section aria-labelledby="facts-heading">
       <h2 id="facts-heading">Beyond the code</h2>
-      <p id="facts-help">Our personal fun facts are coming soon. On smaller screens, scroll the table sideways to see every column.</p>
+      <p id="facts-help">Our personal fun facts are presented below. On smaller screens, scroll the table sideways to see every column.</p>
       <div class="table-scroll" role="region" aria-labelledby="facts-heading" aria-describedby="facts-help" tabindex="0">
         <table class="fun-facts">
           <caption>W3bb fun facts</caption>
@@ -134,6 +141,87 @@
             <tr>
               <th scope="row">Do Dinh Phu</th>
               <td>🎮 Game programmer/tester</td><td>Potato Chips</td><td>Nam Dinh</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading">Our proposed task schedule</h2>
+      <p id="schedule-help">We aim to finish building the website by 23 October and finalize the project on 26 October 2026. This proposed schedule follows our Jira tasks, statuses reflect the board on 21 October. 
+        On smaller screens, scroll the table sideways to see every column.</p>
+      <div class="table-scroll" role="region" aria-labelledby="schedule-heading" aria-describedby="schedule-help" tabindex="0">
+        <table class="task-schedule">
+          <caption>W3bb task plan: 15–26 October 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Planned dates</th>
+              <th scope="col">Task</th>
+              <th scope="col">Team member</th>
+              <th scope="col">Status on 21 Oct</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">By 15 Oct</th>
+              <td>Group agreement, visual style, Jira setup and GitHub repository</td>
+              <td>Whole team</td>
+              <td>Done</td>
+            </tr>
+            <tr>
+              <th scope="row">19–22 Oct</th>
+              <td>Build the About page and footer (CGW-10)</td>
+              <td>Tran Trung Tin</td>
+              <td>In progress</td>
+            </tr>
+            <tr>
+              <th scope="row">19–22 Oct</th>
+              <td>Build the Apply page (CGW-11)</td>
+              <td>Do Dinh Phu</td>
+              <td>In progress</td>
+            </tr>
+            <tr>
+              <th scope="row">19–22 Oct</th>
+              <td>Build the Jobs page (CGW-12)</td>
+              <td>Nguyen Chi Hien</td>
+              <td>In progress</td>
+            </tr>
+            <tr>
+              <th scope="row">19–22 Oct</th>
+              <td>Build the Index page (CGW-13)</td>
+              <td>Nguyen Quoc An</td>
+              <td>In progress</td>
+            </tr>
+            <tr>
+              <th scope="row"> 23 Oct</th>
+              <td>Confirm the tutor can access Jira (CGW-19)</td>
+              <td>Tran Trung Tin</td>
+              <td>In progress</td>
+            </tr>
+            <tr>
+              <th scope="row">24–25 Oct</th>
+              <td>Validate all four HTML pages and check links (CGW-16)</td>
+              <td>Do Dinh Phu</td>
+              <td>To do</td>
+            </tr>
+            <tr>
+              <th scope="row">24–25 Oct</th>
+              <td>Check form validation, keyboard navigation and layouts (CGW-17)</td>
+              <td>Nguyen Chi Hien</td>
+              <td>To do</td>
+            </tr>
+            <tr>
+              <th scope="row">25 Oct</th>
+              <td>Deploy the site with GitHub Pages (CGW-15)</td>
+              <td>Nguyen Quoc An</td>
+              <td>To do</td>
+            </tr>
+            <tr>
+              <th scope="row">26 Oct</th>
+              <td>Final team review and prepare the final ZIP (CGW-18)</td>
+              <td>Whole team; Nguyen Quoc An to prepare the ZIP (proposed)</td>
+              <td>To do</td>
             </tr>
           </tbody>
         </table>
