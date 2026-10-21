@@ -13,6 +13,43 @@
 
   <link rel="stylesheet" href="styles/styles.css">
 
+          <style>
+          .a1_table_job_stage {
+            width: 100%;
+            border: 1px solid var(--line-strong);
+            border-collapse: collapse;
+          }
+
+          .a1_table_job_stage caption {
+            font-weight: bold;
+            text-align: left;
+            border: 1px solid var(--line-strong);
+            border-bottom: none ;
+            padding: 0.5rem 1rem ;
+          }
+
+          .a1_table_job_stage th, .a1_table_job_stage td {
+            border: 1px solid var(--line-strong);
+            padding: 0.5rem 1rem;
+          }
+
+          .a1_table_job_stage th {
+            text-align: left;
+            background-color: var(--col-strong);
+          }
+
+          .a1_table_highlight {
+            background-color: var(--paper-raised);
+          }
+
+          .a1_table_job_stage tr:hover td {
+            background-color: var(--brand-tint);
+          }
+
+          .a1_table_job_stage tbody tr:last-child th, .a1_table_job_stage tbody tr:last-child td {
+            background-color: var(--paper-raised);
+          }
+        </style>
 </head>
 <body>
   <!-- Header and nav bar -->
@@ -40,44 +77,61 @@
     <section class="intro">
       <div class="container">
         <div class="hero_content">
-          <span class="1_first_line">EDBRIDGE CAREERS &middot; NOW HIRING</span>
+          <span class="a1_first_line">EDBRIDGE CAREERS &middot; NOW HIRING</span>
           <h1>Every language is a bridge</h1>
-          <p class="1_slogan">Learn a language. Open a world</p>
+          <p class="a1_slogan">Learn a language. Open a world</p>
           <p>Edbridge is an EdTech company that builds accessible language-learning apps for schools and adult learners. Our web team designs the pages people use to practise every day, and we are growing.</p>
-          <p class="roles">See open roles</p>
-          <ul>
-            <li><a href="jobs.html">Front-End Web Developer</a></li>
-            <li><a href="jobs.html">UX/UI Designer (Learning Products)</a></li>
-          </ul>
-          <a class="meet_team" href="about.html">Meet the team</a>
+          <div class="roles_header">
+            <p class="roles">See open roles</p>
+            <p class="number_of_job">02 open position</p>
+          </div>
+          <div class="a1_job_container">
+              <div class="a1_fe_job">
+                <span class="a1_type_job">01 / ENGINEERING</span>
+                <p class="a1_name_job">Front-End Web Develop</p>
+                <p class="a1_detail">Build engaging web experience that help people learn</p>
+                <a href="jobs.html" class="a1_explore">Explore role</a>
+              </div>
+              <div class="a1_ui_ux_job">
+                <span class="a1_type_job">02 / DESIGN</span>
+                <p class="a1_name_job">UI/UX Designer</p>
+                <p class="a1_detail">Share intuitive learning product that put people first</p>
+                <a href="jobs.html" class="a1_explore">Explore role</a>
+              </div>
+            </div>
+            <br>
+            <a class="a1_meet_team" href="about.html">Meet the team</a>
         </div>
       </div>
     </section>
     
     <section class="why_work_here">
       <div class="container">
-        <h2>Why work at Edbridge</h2>
-        <div class="1_box_1">
-          <h3 >Lesson for evvery learner</h3>
-          <p>Our apps follow WCAG 2.2 so learners who use screen readers, keyboards or small phones can study too. You will help keep it that way.</p>
-        </div>
-
-        <div class="1_box_2">
-          <h3 >12 languages and counting</h3>
-          <p>From Vietnamese to Spanish, every course is written with native-speaker teachers. Staff get free lessons in any of them.</p>
-        </div>
-        <div class="1_box_3">
-          <h3 >Flexible, hybrid work</h3>
-          <p>Two studio days a week in Melbourne, the rest from wherever you learn best, plus a yearly learning budget.</p>
+        <div class="a1_why">
+          <h2>Why work at Edbridge</h2>
+          <div class="a1_why_container">
+            <div class="a1_box">
+              <h3 >Lesson for evvery learner</h3>
+              <p>Our apps follow WCAG 2.2 so learners who use screen readers, keyboards or small phones can study too. You will help keep it that way.</p>
+            </div>
+            <div class="a1_box">
+              <h3 >12 languages and counting</h3>
+              <p>From Vietnamese to Spanish, every course is written with native-speaker teachers. Staff get free lessons in any of them.</p>
+            </div>
+            <div class="a1_box">
+              <h3 >Flexible, hybrid work</h3>
+              <p>Two studio days a week in Melbourne, the rest from wherever you learn best, plus a yearly learning budget.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="1_how">
+    <section class="a1_how">
       <div class="container">
         <h2>How we hire</h2>
         <p>Our process is short and transparent. Tell us in your application if you need any adjustments at any stage.</p>
-        <table class="1_table_job_stage">
+        <table class="a1_table_job_stage">
           <caption>Edbridge hiring process, step by step</caption>
           <thead>
             <tr>
@@ -89,35 +143,36 @@
           </thead>
 
           <tbody>
-            <tr>
+            <tr class="a1_table_highlight">
               <th scope="row" >Apply</th>
               <td>Online form</td>
               <td>Choose a job reference number and tell us about your skills.</td>
               <td>10 minutes</td>
             </tr>
-            <tr>
+            <tr >
               <th scope="row" rowspan="2" >Interviews</th>
               <td>Team chat</td>
               <td>A relaxed video call with two people from the team you would join.</td>
               <td>30 minutes</td>
             </tr>
-            <tr>
+            <tr class="a1_table_highlight">
               <td>Practical task</td>
               <td>A small, paid take-home task based on a real lesson page.</td>
               <td>2 hours</td>
             </tr>
-            <tr>
+            <tr >
               <th scope="row" >Offer</th>
               <td>Decision</td>
               <td>We call you with a decision and feedback, whatever the outcome.</td>
               <td>Within 1 week</td>
             </tr>
             <tr>
-              <th class="1_colspan_3" scope="row" colspan="3">From applicant to offer</th>
+              <th class="a1_table_highlight" scope="row" colspan="3">From applicant to offer</th>
               <td>3–4 weeks</td>
             </tr>
           </tbody>
         </table>
+
       </div>
     </section>
   </main>
