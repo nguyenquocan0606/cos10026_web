@@ -172,3 +172,34 @@ nav a[aria-current="page"] {
   background-color: var(--brand);
   color: var(--on-brand);
 }
+
+.container .hero_content {
+  margin-top: 5rem;
+}
+
+.a1_first_line {
+  color: var(--focus);
+  font-weight: bold;
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.a1_slogan{
+  color: var(--brand-strong);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+.roles + ul {
+  list-style: none;
+}
