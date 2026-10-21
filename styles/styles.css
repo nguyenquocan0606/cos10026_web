@@ -55,10 +55,6 @@ img { max-width: 100%; height: auto; }
 
 
 
-/* =========================================
-   JOBS PAGE
-   Page-specific styling for jobs.html
-   ========================================= */
 
 .jobs-page {
   max-width: 1100px;
@@ -90,8 +86,7 @@ img { max-width: 100%; height: auto; }
   text-underline-offset: 0.2em;
 }
 
-/* Required assignment feature: right-floated aside,
-   25% width, margin, padding and border. */
+
 .jobs-aside {
   float: right;
   width: 25%;
@@ -115,7 +110,6 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 0.65rem;
 }
 
-/* Job cards */
 .job-listing {
   margin: 2rem 0;
   padding: 1.5rem;
@@ -146,7 +140,7 @@ img { max-width: 100%; height: auto; }
   letter-spacing: 0.06em;
 }
 
-/* Definition list for salary and reporting details */
+
 .job-details {
   display: grid;
   grid-template-columns: minmax(8rem, 0.7fr) 2fr;
@@ -164,13 +158,11 @@ img { max-width: 100%; height: auto; }
   margin: 0;
 }
 
-/* Keyboard users should see which link has focus */
 .jobs-page a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 4px;
 }
 
-/* Responsive layout for phones and narrow screens */
 @media (max-width: 700px) {
   .jobs-page {
     padding: 1.25rem 1rem;
