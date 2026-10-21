@@ -3,11 +3,11 @@
   /* Color */
   --paper: #fbf7ef;
   --paper-raised: #fffdf8;
-  --paper-sunk: #f3ecdf;
+  --paper-sunk: #ebe2b3;
   --ink: #1f2a24;
   --ink-muted: #55605a;
   --line: #e2d8c6;
-  --line-strong: #857c6b;
+  --line-strong: #b4a78f;
   --brand: #1f5c46;
   --brand-strong: #174837;
   --brand-tint: #dcebe3;
@@ -45,7 +45,7 @@
     --accent-text: #f4a38c;
     --accent-tint: #3a231c;
     --sun: #e0b04a;
-    --on-sun: #1a1408;
+    --on-sun: #b3b1ae;
     --focus: #f4a38c;
     --danger: #f97066;
     --danger-tint: #3b1a17;
@@ -73,7 +73,7 @@ a:hover { color: var(--brand-strong); }
 img { max-width: 100%; height: auto; }
 
 .container {
-  max-width: 66rem;
+  max-width: 76rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -277,8 +277,10 @@ p {
 .a1_job_container {
   padding-top: 10px;
   display: flex;
+  flex: 1;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .a1_explore {
@@ -298,4 +300,39 @@ p {
   font-family: var(--font-display);
   font-weight: bold;
   color: var(--ink);
+}
+
+.a1_why {
+  margin-top: 5rem;
+  border-top: 2px solid var(--ink);
+}
+
+.a1_why_container {
+  display: flex;
+  gap: 15px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--brand-strong);
+}
+
+.a1_box {
+  border: 1px solid var(--line-strong);
+  border-radius: 15px;
+  padding: 4px 12px;
+  flex: 1;
+  box-shadow: 0px 4px 12px var(--on-sun);
+}
+
+
+.a1_box p {
+  margin-top: 0;
+  padding: 4px;
+}
+
+.a1_box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  padding: 4px;
 }
