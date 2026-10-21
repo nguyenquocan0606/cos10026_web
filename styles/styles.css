@@ -3,11 +3,11 @@
   /* Color */
   --paper: #fbf7ef;
   --paper-raised: #fffdf8;
-  --paper-sunk: #f3ecdf;
+  --paper-sunk: #ebe2b3;
   --ink: #1f2a24;
   --ink-muted: #55605a;
   --line: #e2d8c6;
-  --line-strong: #857c6b;
+  --line-strong: #b4a78f;
   --brand: #1f5c46;
   --brand-strong: #174837;
   --brand-tint: #dcebe3;
@@ -21,9 +21,11 @@
   --focus: #a83e26;
   --danger: #b42318;
   --danger-tint: #fde8e6;
+  --col-strong: #f3ecdf;
   /* Fonts */
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-normal: 'Times New Roman', Times, serif;
 }
 
 /* Dark theme */
@@ -44,7 +46,7 @@
     --accent-text: #f4a38c;
     --accent-tint: #3a231c;
     --sun: #e0b04a;
-    --on-sun: #1a1408;
+    --on-sun: #b3b1ae;
     --focus: #f4a38c;
     --danger: #f97066;
     --danger-tint: #3b1a17;
@@ -72,7 +74,7 @@ a:hover { color: var(--brand-strong); }
 img { max-width: 100%; height: auto; }
 
 .container {
-  max-width: 66rem;
+  max-width: 76rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -177,6 +179,182 @@ nav a:hover {
 nav a[aria-current="page"] {
   background-color: var(--brand);
   color: var(--on-brand);
+}
+
+.container .hero_content {
+  margin-top: 5rem;
+}
+
+.a1_first_line {
+  color: var(--focus);
+  font-weight: bold;
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.a1_slogan{
+  color: var(--brand-strong);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+.roles_header + ul {
+  list-style: none;
+}
+
+.roles_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.roles_header p {
+  margin: 0;
+}
+
+.roles {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var();
+}
+
+.number_of_job {
+  font-family: var(--font-normal);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  display: inline-block;
+  padding: 4px 12px;
+  align-items: right;
+}
+
+.a1_fe_job {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  border-top: 10px solid var(--brand-strong);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px var(--on-sun);
+}
+
+.a1_ui_ux_job {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  border-top: 10px solid var(--brand-strong);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px var(--on-sun);
+
+}
+
+.a1_type_job{
+  font-family:var(--font-sans) ;
+  font-weight: bold;
+  color: var(--accent-text);
+}
+
+.a1_name_job {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 0.15rem;
+  margin-left: 1rem;
+}
+
+.a1_detail {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.a1_job_container {
+  padding-top: 10px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.a1_explore {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.a1_meet_team {
+  text-decoration: none;
+  display: inline-block;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 2rem;
+  font-family: var(--font-display);
+  font-weight: bold;
+  color: var(--ink);
+}
+
+.a1_why {
+  margin-top: 5rem;
+  border-top: 2px solid var(--ink);
+}
+
+.a1_why_container {
+  display: flex;
+  gap: 15px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--brand-strong);
+}
+
+.a1_box {
+  border: 1px solid var(--line-strong);
+  border-radius: 15px;
+  padding: 4px 12px;
+  flex: 1;
+  box-shadow: 0px 4px 12px var(--on-sun);
+}
+
+
+.a1_box p {
+  margin-top: 0;
+  padding: 4px;
+}
+
+.a1_box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  padding: 4px;
+}
+
+.a1_how h2 {
+  margin-top: 5rem;
+  padding-top: 1.75rem;
+  border-top: 2px solid var(--ink) ;
+  margin-bottom: 0.75rem;
+  
+}
+
+.a1_how p {
+  margin-top: 0;
+  font-family: var(--font-sans);
 }
 
 /* About page: keep the header usable on smaller screens. */
