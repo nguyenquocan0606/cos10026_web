@@ -138,6 +138,12 @@ header .container {
   background-color: var(--brand);
 }
 
+/* About page: show keyboard focus on the visible switch. */
+.about-site .theme-switch input:focus-visible + .slider {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 .theme-switch input:checked +.slider::before {
   transform: translateX(1.25rem);
 }
@@ -350,3 +356,127 @@ h2 {
   margin-top: 0;
   font-family: var(--font-sans);
 }
+
+/* About page: keep the header usable on smaller screens. */
+@media (max-width: 55rem) {
+  .about-site header .container { flex-wrap: wrap; }
+  .about-site header nav { width: 100%; margin-left: 0; }
+  .about-site header nav ul { flex-wrap: wrap; }
+  .about-site header nav a { padding-inline: 1rem; }
+}
+
+
+/* Page layout and headings */
+.about-site > main,
+.about-site > footer {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.about-site h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; }
+.about-site h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; }
+.about-site main > section { margin-top: 3rem; }
+.about-site .eyebrow { color: var(--accent-text); font-weight: 700; }
+.about-site p,
+.about-site li,
+.about-site dt,
+.about-site td,
+.about-site th { overflow-wrap: anywhere; }
+
+/* Nested group list */
+.about-site .group-details { padding-left: 1.5rem; }
+.about-site .group-details ul { padding-left: 1.5rem; margin-top: 0.5rem; }
+.about-site .group-details li + li { margin-top: 0.25rem; }
+
+/* Member definitions, student IDs and quotes */
+.about-site .member-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.about-site .member-card {
+  padding: 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-top: 4px solid var(--brand);
+  border-radius: 0.5rem;
+  background: var(--paper-raised);
+}
+
+.about-site .member-card dt { font-size: 1.35rem; font-weight: 700; }
+.about-site .member-card dd { margin: 0; }
+.about-site .student-id {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--brand);
+  border-radius: 0.25rem;
+  background: var(--brand-tint);
+  color: var(--brand-strong);
+  font-family: ui-monospace, monospace;
+}
+
+.about-site .quote-content { color: var(--ink-muted); }
+
+/* One bordered figure for the whole group */
+.about-site .group-photo {
+  margin: 0;
+  padding: 1rem;
+  border: 2px solid var(--brand);
+  border-radius: 0.5rem;
+  background: var(--paper-raised);
+}
+.about-site .photo-placeholder {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--paper-sunk);
+}
+.about-site figcaption { padding-top: 0.75rem; color: var(--ink-muted); }
+
+.about-site .table-scroll { max-width: 100%; overflow-x: auto; }
+.about-site table {
+  width: 100%;
+  min-width: 38rem;
+  border-collapse: collapse;
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+.about-site caption { padding-bottom: 0.75rem; text-align: left; font-weight: 700; }
+.about-site th, .about-site td {
+  padding: 1rem;
+  border: 1px solid var(--line-strong);
+  text-align: left;
+  vertical-align: top;
+}
+.about-site thead { background: var(--brand); color: var(--on-brand); }
+.about-site tbody tr:nth-child(even) { background: var(--paper-sunk); }
+.about-site tbody tr:hover { background: var(--brand-tint); }
+
+/* Inclusion statement explains our commitment in readable text. */
+.about-site .inclusion-statement {
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-tint);
+}
+.about-site .inclusion-statement h2 { margin-top: 0; }
+.about-site .inclusion-statement p { max-width: 75ch; }
+
+/* Footer border and text colour */
+.about-site > footer { border-top: 2px solid var(--brand); color: var(--ink-muted); }
+
+/* Responsive layout: one member per row; tables scroll inside the page. */
+@media (max-width: 40rem) {
+  .about-site .member-list { grid-template-columns: 1fr; }
+  .about-site .member-card { padding: 1rem; }
+  .about-site main > section { margin-top: 2rem; }
+  .about-site th,
+  .about-site td { padding: 0.75rem; }
+}
+
+/* Preserve borders in high contrast mode. */
+@media (forced-colors: active) {
+  .about-site .member-card,
+  .about-site .student-id,
+  .about-site .group-photo { border-color: CanvasText; }
+}
+
