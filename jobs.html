@@ -1,44 +1,222 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="some thing here">
-  <meta name="author" content="name">
-  <title>This page of ..... </title>
-  <!-- Fonts -->
+
+  <meta name="description"
+        content="Explore careers at Edbridge in accessible digital learning and educational technology.">
+  <meta name="author" content="Edbridge Web Project Team">
+
+  <title>Careers at Edbridge | Job Opportunities</title>
+
+  <!-- Shared fonts used by the team website -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Fraunces:opsz,wght@9..144,600&amp;display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600&display=swap">
 
+  <!-- Shared external stylesheet -->
   <link rel="stylesheet" href="styles/styles.css">
 
   <style>
+    .jobs-intro {
+      max-width: 68ch;
+    }
   </style>
 </head>
+
 <body>
-  <!-- Header and nav bar -->
+  <!-- Shared header and navigation -->
   <header>
     <a href="index.html">Edbridge</a>
+
     <nav aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="jobs.html" aria-current="page">Jobs</a></li>
         <li><a href="apply.html">Apply</a></li>
         <li><a href="about.html">About us</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Main content of your -->
-  <main>
-    <h1>Job</h1>
-    <p>Content</p>
+  <main class="jobs-page">
+    <section class="jobs-intro" aria-labelledby="jobs-heading">
+      <p class="jobs-eyebrow" style="font-weight: 700;">
+        CAREERS AT ED BRIDGE
+      </p>
+
+      <h1 id="jobs-heading">Build a more inclusive future for learning</h1>
+
+      <p>
+        At Edbridge, we develop digital learning tools that help people
+        access education in flexible and inclusive ways. Join our team
+        to create online experiences that support learners and educators.
+      </p>
+
+      <p>
+        Explore our current opportunities below and review the
+        responsibilities and requirements before applying.
+      </p>
+
+      <a class="jobs-apply-link" href="apply.html">
+        View application form
+      </a>
+    </section>
+
+    <aside class="jobs-aside" aria-labelledby="inclusive-workplace">
+      <h2 id="inclusive-workplace">Learning should include everyone</h2>
+
+      <p>
+        Edbridge welcomes applications from Aboriginal and Torres Strait
+        Islander peoples and people from diverse backgrounds. We aim to
+        create inclusive digital learning experiences and a respectful
+        workplace.
+      </p>
+
+      <h3>Before you apply</h3>
+      <ol>
+        <li>Read the job description.</li>
+        <li>Check the essential requirements.</li>
+        <li>Note the five-character job reference.</li>
+        <li>Complete the application form.</li>
+      </ol>
+
+      <p>
+        <a href="apply.html">Continue to apply</a>
+      </p>
+    </aside>
+
+    <section class="job-listing" aria-labelledby="developer-title">
+      <p class="job-reference">JOB REFERENCE: ED101</p>
+
+      <h2 id="developer-title">Learning Platform Web Developer</h2>
+
+      <p>
+        Help develop and maintain the web interfaces used by students
+        and educators across our online learning platform. You will work
+        with designers and other developers to deliver usable,
+        accessible and responsive learning experiences.
+      </p>
+
+      <section aria-labelledby="developer-details">
+        <h3 id="developer-details">Role details</h3>
+        <dl class="job-details">
+          <dt>Salary</dt>
+          <dd>AUD $75,000–$90,000 per year</dd>
+
+          <dt>Reports to</dt>
+          <dd>Web Development Team Lead</dd>
+
+          <dt>Employment type</dt>
+          <dd>Full-time</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="developer-duties">
+        <h3 id="developer-duties">Key responsibilities</h3>
+        <ul>
+          <li>Develop and maintain web pages using HTML5 and CSS3.</li>
+          <li>Create responsive interfaces for desktop, tablet and mobile.</li>
+          <li>Collaborate with designers to implement accessible page layouts.</li>
+          <li>Test links, navigation and page structure across browsers.</li>
+          <li>Document changes and help resolve interface issues.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="developer-essential">
+        <h3 id="developer-essential">Essential requirements</h3>
+        <ul>
+          <li>Understanding of HTML5 and CSS3 fundamentals.</li>
+          <li>Ability to structure pages using semantic HTML elements.</li>
+          <li>Basic knowledge of responsive design and web accessibility.</li>
+          <li>Good communication and teamwork skills.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="developer-preferred">
+        <h3 id="developer-preferred">Preferable requirements</h3>
+        <ul>
+          <li>Experience using Git and GitHub for version control.</li>
+          <li>Familiarity with accessibility guidelines such as WCAG.</li>
+          <li>Experience testing websites with keyboard navigation.</li>
+        </ul>
+      </section>
+
+      <p class="job-action">
+        Interested in this role?
+        <a href="apply.html">Apply using reference ED101</a>.
+      </p>
+    </section>
+
+    <section class="job-listing" aria-labelledby="designer-title">
+      <p class="job-reference">JOB REFERENCE: ED202</p>
+
+      <h2 id="designer-title">Accessibility and UX Designer</h2>
+
+      <p>
+        Help make online education easier to use for learners with
+        different abilities, needs and levels of digital experience.
+        You will improve the clarity, navigation and inclusiveness
+        of our learning interfaces.
+      </p>
+
+      <section aria-labelledby="designer-details">
+        <h3 id="designer-details">Role details</h3>
+        <dl class="job-details">
+          <dt>Salary</dt>
+          <dd>AUD $70,000–$85,000 per year</dd>
+
+          <dt>Reports to</dt>
+          <dd>Product Design Manager</dd>
+
+          <dt>Employment type</dt>
+          <dd>Full-time</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="designer-duties">
+        <h3 id="designer-duties">Key responsibilities</h3>
+        <ul>
+          <li>Design clear page layouts and user journeys for online learning.</li>
+          <li>Create wireframes and prototypes for new features.</li>
+          <li>Review interfaces for readability, contrast and keyboard access.</li>
+          <li>Gather feedback and identify usability improvements.</li>
+          <li>Work with developers to turn design concepts into web pages.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="designer-essential">
+        <h3 id="designer-essential">Essential requirements</h3>
+        <ul>
+          <li>Understanding of user-centred design principles.</li>
+          <li>Ability to explain design decisions clearly.</li>
+          <li>Awareness of inclusive design and accessibility principles.</li>
+          <li>Willingness to collaborate and respond to feedback.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="designer-preferred">
+        <h3 id="designer-preferred">Preferable requirements</h3>
+        <ul>
+          <li>Experience with wireframing or prototyping tools.</li>
+          <li>Familiarity with WCAG accessibility guidelines.</li>
+          <li>Experience conducting usability testing.</li>
+        </ul>
+      </section>
+
+      <p class="job-action">
+        Interested in this role?
+        <a href="apply.html">Apply using reference ED202</a>.
+      </p>
+    </section>
+
   </main>
 
-  <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2026 Edbridge &mdash; COS10026 Web Technology Project.</p>
+    <p>&copy; 2026 Edbridge — COS10026 Web Technology Project.</p>
   </footer>
 </body>
 </html>
