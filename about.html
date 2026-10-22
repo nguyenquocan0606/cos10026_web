@@ -19,7 +19,10 @@
     <body class="about-site">
     <header>
     <div class="container">
-      <a href="index.html" class="Edbridge">Edbridge</a>
+      <a href="index.html" class="Edbridge about-brand">
+        <span class="brand-logo"><img src="img/logo.webp" alt="" width="1024" height="1024"></span>
+        <span>Edbridge</span>
+      </a>
       <label class="theme-switch">
         <input type="checkbox" id="theme-toggle">
         <span class="slider"></span>
@@ -228,16 +231,53 @@
       </div>
     </section>
 
-    <section class="inclusion-statement" aria-labelledby="inclusion-heading">
-      <h2 id="inclusion-heading">Respect and inclusion in education</h2>
-      <p>We recognise Aboriginal and Torres Strait Islander peoples as the First Peoples of Australia and respect their continuing connections to Country, cultures and communities.</p>
-      <p>As a student team in Hanoi developing an education careers website, we want Edbridge to reflect respect for the people and communities that education serves. We welcome Aboriginal and Torres Strait Islander applicants and value the knowledge and perspectives they bring to education.</p>
-      <p>For this project, our commitment means using respectful language, making career information accessible, and avoiding stereotypes in how we describe people and roles. Edbridge is a student project; this statement expresses our team's values and does not claim a community partnership.</p>
-    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Edbridge &mdash; COS10026 Web Technology Project.</p>
+  <footer class="about-footer">
+    <section class="footer-acknowledgement" aria-labelledby="country-heading">
+      <div class="footer-inner">
+        <h2 id="country-heading">Acknowledgement of Country</h2>
+        <p>We acknowledge Aboriginal and Torres Strait Islander peoples as the Traditional Owners of lands across Australia and pay our respects to Elders past and present. We recognise their continuing connections to Country and the knowledge carried through their languages and cultures.</p>
+        <p>As students in Hanoi creating an education careers website, we want our work to support respect and inclusion. We welcome Aboriginal and Torres Strait Islander applicants.</p>
+      </div>
+    </section>
+
+    <div class="footer-inner">
+      <div class="footer-columns">
+        <div>
+          <a href="index.html" class="Edbridge about-brand">
+            <span class="brand-logo"><img src="img/logo.webp" alt="" width="1024" height="1024" loading="lazy"></span>
+            <span>Edbridge</span>
+          </a>
+          <p class="footer-tagline">Learn a language. Open a world.</p>
+        </div>
+
+        <section aria-labelledby="project-links-heading">
+          <h3 id="project-links-heading">Project</h3>
+          <ul>
+            <li><a href="https://soulknightprequel15.atlassian.net/jira/software/projects/CGW/boards/3?filter=&amp;groupBy=none">Jira board</a></li>
+            <li><a href="https://github.com/nguyenquocan0606/cos10026_web">GitHub repository</a></li>
+            <li><a href="https://edbridge.mochilab3d.com">Live site</a></li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="quick-links-heading">
+          <h3 id="quick-links-heading">Quick links</h3>
+          <ul>
+            <li><a href="jobs.html">Explore jobs</a></li>
+            <li><a href="apply.html">Apply for a role</a></li>
+            <li><a href="#members-heading">Meet the team</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <section aria-labelledby="credits-heading">
+        <h3 id="credits-heading">GenAI sources and credits</h3>
+        <p><a href="https://openai.com/codex/">OpenAI Codex</a> assisted with drafting and editing About-page content and CSS logo cropping. Team details and task information were supplied by W3bb. The <a href="img/logo.webp">Edbridge logo</a> was generated using Gemini Argon and supplied by the team.</p>
+      </section>
+
+      <p class="footer-copyright">&copy; 2026 Edbridge &mdash; a fictional company created by W3bb for the COS10026 Web Technology Project, Swinburne University of Technology.</p>
+    </div>
   </footer>
 </body>
 </html>
