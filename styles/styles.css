@@ -113,6 +113,33 @@ header .container {
   font-family: var(--font-display);
 }
 
+/* Shared logo alignment and crop for all headers and footers. */
+header .Edbridge,
+footer .Edbridge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+header .brand-logo,
+footer .brand-logo {
+  width: 3.75rem;
+  height: 3rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 0.25rem;
+}
+header .brand-logo img,
+footer .brand-logo img {
+  display: block;
+  width: 12rem;
+  max-width: none;
+  transform: translate(-1.25rem, -2.5rem);
+}
+
 .theme-switch input {
   position: absolute;
   opacity: 0;
@@ -446,31 +473,7 @@ nav a[aria-current="page"] {
 .about-site tbody tr:nth-child(even) { background: var(--paper-sunk); }
 .about-site tbody tr:hover { background: var(--brand-tint); }
 
-/* 7. align the symbol and name, then crop the supplied logo sheet.
-   fooeter and header shared classes */
-.about-site .about-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--ink);
-  font-weight: 600;
-  white-space: nowrap;
-}
-.about-site .brand-logo {
-  width: 3.75rem;
-  height: 3rem;
-  overflow: hidden;
-  flex-shrink: 0;
-  border-radius: 0.25rem;
-}
-.about-site .brand-logo img {
-  display: block;
-  width: 12rem;
-  max-width: none;
-  transform: translate(-1.25rem, -2.5rem);
-}
-
-/* 8. Responsive layout: wrap the header first, then stack member cards.
+/* 7. Responsive layout: wrap the header first, then stack member cards.
    rem units follow the root font size, including user font-size preferences. */
 @media (max-width: 64rem) {
   .about-site header .container { flex-wrap: wrap; }
@@ -486,7 +489,7 @@ nav a[aria-current="page"] {
   .about-site td { padding: 0.75rem; }
 }
 
-/* 9. High contrast mode: use the system text colour for important borders. */
+/* 8. High contrast mode: use the system text colour for important borders. */
 @media (forced-colors: active) {
   .about-site .member-card,
   .about-site .student-id,
