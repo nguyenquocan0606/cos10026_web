@@ -24,6 +24,7 @@
   /* Fonts */
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-normal: 'Times New Roman', Times, serif;
 }
 
 /* Dark theme */
@@ -136,12 +137,6 @@ header .container {
   background-color: var(--brand);
 }
 
-/* About page: show keyboard focus on the visible switch. */
-.about-site .theme-switch input:focus-visible + .slider {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
 .theme-switch input:checked +.slider::before {
   transform: translateX(1.25rem);
 }
@@ -179,18 +174,17 @@ nav a[aria-current="page"] {
   color: var(--on-brand);
 }
 
-/* About page: keep the header usable on smaller screens. */
-@media (max-width: 55rem) {
-  .about-site header .container { flex-wrap: wrap; }
-  .about-site header nav { width: 100%; margin-left: 0; }
-  .about-site header nav ul { flex-wrap: wrap; }
-  .about-site header nav a { padding-inline: 1rem; }
+/* about page/
+
+/* 1. Keyboard focus: outline the visible switch when its input has focus. */
+.about-site .theme-switch input:focus-visible + .slider {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 
-
-/* Page layout and headings */
-.about-site > main,
-.about-site > footer {
+/* 2. Layout and headings: centre the content and scale heading sizes.
+   overflow-wrap allows long text to wrap instead of widening the page. */
+.about-site > main {
   width: min(100% - 2rem, 72rem);
   margin-inline: auto;
   padding-block: 2rem;
@@ -206,12 +200,13 @@ nav a[aria-current="page"] {
 .about-site td,
 .about-site th { overflow-wrap: anywhere; }
 
-/* Nested group list */
+/* 3. Group details: indent both list levels and space the items. */
 .about-site .group-details { padding-left: 1.5rem; }
 .about-site .group-details ul { padding-left: 1.5rem; margin-top: 0.5rem; }
 .about-site .group-details li + li { margin-top: 0.25rem; }
 
-/* Member definitions, student IDs and quotes */
+/* 4. Members: two equal columns, bordered cards and highlighted student IDs.
+   dt styles each member's name; dd removes the default definition indent. */
 .about-site .member-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -240,7 +235,7 @@ nav a[aria-current="page"] {
 
 .about-site .quote-content { color: var(--ink-muted); }
 
-/* One bordered figure for the whole group */
+/* 5. Group photo: border the figure, style its placeholder and caption. */
 .about-site .group-photo {
   margin: 0;
   padding: 1rem;
@@ -255,13 +250,14 @@ nav a[aria-current="page"] {
 }
 .about-site figcaption { padding-top: 0.75rem; color: var(--ink-muted); }
 
+/* 6. Tables: allow sideways scrolling, join cell borders, and colour rows.
+   These rules apply to both the fun-facts and task-schedule tables. */
 .about-site .table-scroll { max-width: 100%; overflow-x: auto; }
 .about-site table {
   width: 100%;
   min-width: 38rem;
   border-collapse: collapse;
   background: var(--paper-raised);
-  color: var(--ink);
 }
 .about-site caption { padding-bottom: 0.75rem; text-align: left; font-weight: 700; }
 .about-site th, .about-site td {
@@ -274,19 +270,38 @@ nav a[aria-current="page"] {
 .about-site tbody tr:nth-child(even) { background: var(--paper-sunk); }
 .about-site tbody tr:hover { background: var(--brand-tint); }
 
-/* Inclusion statement explains our commitment in readable text. */
-.about-site .inclusion-statement {
-  padding: 1.5rem;
-  border-left: 4px solid var(--accent);
-  background: var(--accent-tint);
+/* 7. Branding: align the symbol and name, then crop the supplied logo sheet.
+   These classes are shared by the About header and footer, so keep them here. */
+.about-site .about-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
 }
-.about-site .inclusion-statement h2 { margin-top: 0; }
-.about-site .inclusion-statement p { max-width: 75ch; }
+.about-site .brand-logo {
+  width: 3.75rem;
+  height: 3rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 0.25rem;
+}
+.about-site .brand-logo img {
+  display: block;
+  width: 12rem;
+  max-width: none;
+  transform: translate(-1.25rem, -2.5rem);
+}
 
-/* Footer border and text colour */
-.about-site > footer { border-top: 2px solid var(--brand); color: var(--ink-muted); }
-
-/* Responsive layout: one member per row; tables scroll inside the page. */
+/* 8. Responsive layout: wrap the header first, then stack member cards.
+   rem units follow the root font size, including user font-size preferences. */
+@media (max-width: 64rem) {
+  .about-site header .container { flex-wrap: wrap; }
+  .about-site header nav { width: 100%; margin-left: 0; }
+  .about-site header nav ul { flex-wrap: wrap; }
+  .about-site header nav a { padding-inline: 1rem; }
+}
 @media (max-width: 40rem) {
   .about-site .member-list { grid-template-columns: 1fr; }
   .about-site .member-card { padding: 1rem; }
@@ -295,10 +310,137 @@ nav a[aria-current="page"] {
   .about-site td { padding: 0.75rem; }
 }
 
-/* Preserve borders in high contrast mode. */
+/* 9. High contrast mode: use the system text colour for important borders. */
 @media (forced-colors: active) {
   .about-site .member-card,
   .about-site .student-id,
   .about-site .group-photo { border-color: CanvasText; }
 }
 
+/* end about page */
+
+.container .hero_content {
+  margin-top: 5rem;
+}
+
+.a1_first_line {
+  color: var(--focus);
+  font-weight: bold;
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.a1_slogan{
+  color: var(--brand-strong);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+.roles_header + ul {
+  list-style: none;
+}
+
+.roles_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.roles_header p {
+  margin: 0;
+}
+
+.roles {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var();
+}
+
+.number_of_job {
+  font-family: var(--font-normal);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  display: inline-block;
+  padding: 4px 12px;
+  align-items: right;
+}
+
+.a1_fe_job {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  border-top: 10px solid var(--brand-strong);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px var(--on-sun);
+}
+
+.a1_ui_ux_job {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  border-top: 10px solid var(--brand-strong);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px var(--on-sun);
+
+}
+
+.a1_type_job{
+  font-family:var(--font-sans) ;
+  font-weight: bold;
+  color: var(--accent-text);
+}
+
+.a1_name_job {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 0.15rem;
+  margin-left: 1rem;
+}
+
+.a1_detail {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.a1_job_container {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.a1_explore {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.a1_meet_team {
+  text-decoration: none;
+  display: inline-block;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 2rem;
+  font-family: var(--font-display);
+  font-weight: bold;
+  color: var(--ink);
+}
