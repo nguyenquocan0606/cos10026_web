@@ -50,8 +50,8 @@
     --focus: #f4a38c;
     --danger: #f97066;
     --danger-tint: #3b1a17;
+    --col-strong: #232d28;
   }
-
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -65,6 +65,22 @@ body {
 }
 
 h1, h2 { font-family: var(--font-display); font-weight: 600; }
+
+/* Shared heading and paragraph defaults. */
+h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--brand-strong);
+}
+
+p {
+  font-size: 1.25rem;
+}
 
 a { color: var(--brand); }
 a:hover { color: var(--brand-strong); }
@@ -95,6 +111,33 @@ header .container {
   font-size: 2rem;
   text-decoration: none;
   font-family: var(--font-display);
+}
+
+/* Shared logo alignment and crop for all headers and footers. */
+header .Edbridge,
+footer .Edbridge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+header .brand-logo,
+footer .brand-logo {
+  width: 3.75rem;
+  height: 3rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 0.25rem;
+}
+header .brand-logo img,
+footer .brand-logo img {
+  display: block;
+  width: 12rem;
+  max-width: none;
+  transform: translate(-1.25rem, -2.5rem);
 }
 
 .theme-switch input {
@@ -138,12 +181,6 @@ header .container {
   background-color: var(--brand);
 }
 
-/* About page: show keyboard focus on the visible switch. */
-.about-site .theme-switch input:focus-visible + .slider {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
 .theme-switch input:checked +.slider::before {
   transform: translateX(1.25rem);
 }
@@ -170,7 +207,6 @@ nav a {
   transition: background-color 0.2s, color 0.2s;
 }
 
-
 nav a:hover {
   background-color: var(--brand-tint);
   color: var(--ink);
@@ -191,21 +227,11 @@ nav a[aria-current="page"] {
   font-family: var(--font-sans);
 }
 
-h1 {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  margin: 0;
-}
-
 .a1_slogan{
   color: var(--brand-strong);
   font-size: 1.5rem;
   font-weight: bold;
   margin: auto;
-}
-
-p {
-  font-size: 1.25rem;
 }
 
 .roles_header + ul {
@@ -226,7 +252,6 @@ p {
 .roles {
   font-family: var(--font-display);
   font-size: 2rem;
-  color: var();
 }
 
 .number_of_job {
@@ -237,7 +262,6 @@ p {
   border-radius: 999px;
   display: inline-block;
   padding: 4px 12px;
-  align-items: right;
 }
 
 .a1_fe_job {
@@ -319,11 +343,6 @@ p {
   gap: 15px;
 }
 
-h2 {
-  font-size: 2rem;
-  color: var(--brand-strong);
-}
-
 .a1_box {
   border: 1px solid var(--line-strong);
   border-radius: 15px;
@@ -331,7 +350,6 @@ h2 {
   flex: 1;
   box-shadow: 0px 4px 12px var(--on-sun);
 }
-
 
 .a1_box p {
   margin-top: 0;
@@ -349,7 +367,7 @@ h2 {
   padding-top: 1.75rem;
   border-top: 2px solid var(--ink) ;
   margin-bottom: 0.75rem;
-  
+
 }
 
 .a1_how p {
@@ -357,18 +375,19 @@ h2 {
   font-family: var(--font-sans);
 }
 
-/* About page: keep the header usable on smaller screens. */
-@media (max-width: 55rem) {
-  .about-site header .container { flex-wrap: wrap; }
-  .about-site header nav { width: 100%; margin-left: 0; }
-  .about-site header nav ul { flex-wrap: wrap; }
-  .about-site header nav a { padding-inline: 1rem; }
+
+
+/* About page*/
+
+/* 1. Keyboard focus: outline the visible switch when its input has focus. */
+.about-site .theme-switch input:focus-visible + .slider {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 
-
-/* Page layout and headings */
-.about-site > main,
-.about-site > footer {
+/* 2. Layout and headings: centre the content and scale heading sizes.
+   overflow-wrap allows long text to wrap instead of widening the page. */
+.about-site > main {
   width: min(100% - 2rem, 72rem);
   margin-inline: auto;
   padding-block: 2rem;
@@ -377,6 +396,7 @@ h2 {
 .about-site h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; }
 .about-site h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; }
 .about-site main > section { margin-top: 3rem; }
+.about-site .country-acknowledgement { max-width: 80ch; }
 .about-site .eyebrow { color: var(--accent-text); font-weight: 700; }
 .about-site p,
 .about-site li,
@@ -384,12 +404,13 @@ h2 {
 .about-site td,
 .about-site th { overflow-wrap: anywhere; }
 
-/* Nested group list */
+/* 3. Group details: indent both list levels and space the items. */
 .about-site .group-details { padding-left: 1.5rem; }
 .about-site .group-details ul { padding-left: 1.5rem; margin-top: 0.5rem; }
 .about-site .group-details li + li { margin-top: 0.25rem; }
 
-/* Member definitions, student IDs and quotes */
+/* 4. Members: two equal columns, bordered cards and highlighted student IDs.
+   dt styles each member's name; dd removes the default definition indent. */
 .about-site .member-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -418,7 +439,7 @@ h2 {
 
 .about-site .quote-content { color: var(--ink-muted); }
 
-/* One bordered figure for the whole group */
+/* 5. Group photo: border the figure, style its placeholder and caption. */
 .about-site .group-photo {
   margin: 0;
   padding: 1rem;
@@ -433,13 +454,14 @@ h2 {
 }
 .about-site figcaption { padding-top: 0.75rem; color: var(--ink-muted); }
 
+/* 6. Tables: allow sideways scrolling, join cell borders, and colour rows.
+   These rules apply to both the fun-facts and schedule tables. */
 .about-site .table-scroll { max-width: 100%; overflow-x: auto; }
 .about-site table {
   width: 100%;
   min-width: 38rem;
   border-collapse: collapse;
   background: var(--paper-raised);
-  color: var(--ink);
 }
 .about-site caption { padding-bottom: 0.75rem; text-align: left; font-weight: 700; }
 .about-site th, .about-site td {
@@ -452,19 +474,14 @@ h2 {
 .about-site tbody tr:nth-child(even) { background: var(--paper-sunk); }
 .about-site tbody tr:hover { background: var(--brand-tint); }
 
-/* Inclusion statement explains our commitment in readable text. */
-.about-site .inclusion-statement {
-  padding: 1.5rem;
-  border-left: 4px solid var(--accent);
-  background: var(--accent-tint);
+/* 7. Responsive layout: wrap the header first, then stack member cards.
+   rem units follow the root font size, including user font-size preferences. */
+@media (max-width: 64rem) {
+  .about-site header .container { flex-wrap: wrap; }
+  .about-site header nav { width: 100%; margin-left: 0; }
+  .about-site header nav ul { flex-wrap: wrap; }
+  .about-site header nav a { padding-inline: 1rem; }
 }
-.about-site .inclusion-statement h2 { margin-top: 0; }
-.about-site .inclusion-statement p { max-width: 75ch; }
-
-/* Footer border and text colour */
-.about-site > footer { border-top: 2px solid var(--brand); color: var(--ink-muted); }
-
-/* Responsive layout: one member per row; tables scroll inside the page. */
 @media (max-width: 40rem) {
   .about-site .member-list { grid-template-columns: 1fr; }
   .about-site .member-card { padding: 1rem; }
@@ -473,17 +490,14 @@ h2 {
   .about-site td { padding: 0.75rem; }
 }
 
-/* Preserve borders in high contrast mode. */
+/* 8. High contrast mode: use the system text colour for important borders. */
 @media (forced-colors: active) {
   .about-site .member-card,
   .about-site .student-id,
   .about-site .group-photo { border-color: CanvasText; }
 }
 
-
-
-
-
+/* Jobs page */
 .jobs-page {
   max-width: 1100px;
   margin: 0 auto;
@@ -513,7 +527,6 @@ h2 {
   font-weight: 700;
   text-underline-offset: 0.2em;
 }
-
 
 .jobs-aside {
   float: right;
@@ -568,7 +581,6 @@ h2 {
   letter-spacing: 0.06em;
 }
 
-
 .job-details {
   display: grid;
   grid-template-columns: minmax(8rem, 0.7fr) 2fr;
@@ -613,5 +625,292 @@ h2 {
 
   .job-details dd {
     margin-bottom: 0.75rem;
+  }
+}
+
+/*
+   APPLY PAGE STYLES
+ */
+
+/* ---------- Main application panel ---------- */
+.apply-page > main {
+  width: min(calc(100% - 3rem), 850px);
+  margin: 2.5rem auto 3rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  border-top: 5px solid var(--brand);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(31, 42, 36, 0.10);
+}
+
+.apply-page > main h1 {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.apply-page > main > p {
+  margin: 0 0 2rem;
+  color: var(--ink-muted);
+  font-size: 1rem;
+}
+
+/* ---------- Form layout ---------- */
+.apply-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.apply-page .form-row {
+  min-width: 0;
+  margin: 0;
+}
+
+.apply-page div.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.apply-page .form-row > label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* ---------- Input fields and dropdowns ---------- */
+.apply-page input[type="text"],
+.apply-page input[type="email"],
+.apply-page input[type="tel"],
+.apply-page input[type="number"],
+.apply-page input[type="date"],
+.apply-page input[type="password"],
+.apply-page input:not([type]),
+.apply-page select,
+.apply-page textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.apply-page select {
+  cursor: pointer;
+}
+
+.apply-page select option {
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
+.apply-page textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.apply-page input::placeholder,
+.apply-page textarea::placeholder {
+  color: var(--ink-muted);
+  opacity: 0.8;
+}
+
+.apply-page input:hover,
+.apply-page select:hover,
+.apply-page textarea:hover {
+  border-color: var(--brand);
+}
+
+.apply-page input:focus,
+.apply-page select:focus,
+.apply-page textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--brand) 22%, transparent);
+}
+
+/* ---------- Fieldsets and legends ---------- */
+.apply-page fieldset.form-row {
+  min-width: 0;
+  padding: 1rem 1.1rem 1.2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--paper-raised);
+  box-shadow: none;
+}
+
+.apply-page fieldset legend {
+  padding: 0 0.5rem;
+  color: var(--brand);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ---------- Radio buttons and checkboxes ---------- */
+.apply-page .choice-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.3rem;
+}
+
+.apply-page .choice-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--ink);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.apply-page input[type="radio"],
+.apply-page input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--brand);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+/* ---------- Form buttons ---------- */
+.apply-page .form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.apply-page .form-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s,
+    border-color 0.2s, transform 0.2s;
+}
+
+.apply-page .form-actions button[type="submit"] {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+
+.apply-page .form-actions button[type="submit"]:hover {
+  background: var(--brand-strong);
+  color: var(--on-brand);
+  transform: translateY(-1px);
+}
+
+.apply-page .form-actions button[type="reset"] {
+  border-color: var(--line-strong);
+  background: transparent;
+  color: var(--brand);
+}
+
+.apply-page .form-actions button[type="reset"]:hover {
+  border-color: var(--brand);
+  background: var(--brand-tint);
+  color: var(--brand-strong);
+}
+
+/* ---------- Footer ---------- */
+.apply-page > footer {
+  width: min(calc(100% - 3rem), 850px);
+  margin: 0 auto;
+  padding: 1.25rem 0 2rem;
+  border-top: 2px solid var(--brand);
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+.apply-page > footer p {
+  margin: 0;
+}
+
+/* ---------- Responsive layout ---------- */
+@media (max-width: 700px) {
+  .apply-page > header {
+    padding: 1rem;
+  }
+
+  .apply-page > header nav {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .apply-page > header nav ul {
+    gap: 0.2rem;
+  }
+
+  .apply-page > header nav a {
+    padding: 0.45rem 0.75rem;
+  }
+
+  .apply-page > main {
+    width: calc(100% - 1.5rem);
+    margin: 1.25rem auto 2rem;
+    padding: 1.25rem;
+  }
+
+  .apply-page > main h1 {
+    font-size: 2rem;
+  }
+
+  .apply-page .choice-group {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .apply-page .form-actions {
+    flex-direction: column;
+  }
+
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .apply-page *,
+  .apply-page *::before,
+  .apply-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- High contrast accessibility ---------- */
+@media (forced-colors: active) {
+  .apply-page > header nav a[aria-current="page"],
+  .apply-page > main,
+  .apply-page fieldset.form-row,
+  .apply-page input,
+  .apply-page select,
+  .apply-page textarea,
+  .apply-page .form-actions button {
+    border: 1px solid CanvasText;
   }
 }
