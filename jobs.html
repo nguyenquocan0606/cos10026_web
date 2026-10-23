@@ -28,18 +28,26 @@
 </head>
 
 <body>
-  <!-- Shared header and navigation -->
   <header>
-    <a href="index.html">Edbridge</a>
-
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="jobs.html" aria-current="page">Jobs</a></li>
-        <li><a href="apply.html">Apply</a></li>
-        <li><a href="about.html">About us</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <a href="index.html" class="Edbridge">
+        <span class="brand-logo"><img src="img/logo.webp" alt="" width="1024" height="1024"></span>
+        <span>Edbridge</span>
+      </a>
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+          Dark Mode
+      </label>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html" aria-current="page">Jobs</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html">About us</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="jobs-page">
