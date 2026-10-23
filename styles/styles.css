@@ -1,35 +1,6 @@
 
 :root {
   /* Color */
-  --paper: #fbf7ef;
-  --paper-raised: #fffdf8;
-  --paper-sunk: #ebe2b3;
-  --ink: #1f2a24;
-  --ink-muted: #55605a;
-  --line: #e2d8c6;
-  --line-strong: #b4a78f;
-  --brand: #1f5c46;
-  --brand-strong: #174837;
-  --brand-tint: #dcebe3;
-  --on-brand: #ffffff;
-  --accent: #e8704f;
-  --on-accent: #1f2a24;
-  --accent-text: #a83e26;
-  --accent-tint: #fbe3da;
-  --sun: #e9b949;
-  --on-sun: #1f2a24;
-  --focus: #a83e26;
-  --danger: #b42318;
-  --danger-tint: #fde8e6;
-  --col-strong: #f3ecdf;
-  /* Fonts */
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
-  --font-normal: 'Times New Roman', Times, serif;
-}
-
-/* Dark theme */
-  :root:has(#theme-toggle:checked) {
     --paper: #141a17;
     --paper-raised: #1c2420;
     --paper-sunk: #232d28;
@@ -51,6 +22,35 @@
     --danger: #f97066;
     --danger-tint: #3b1a17;
     --col-strong: #232d28;
+  /* Fonts */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-normal: 'Times New Roman', Times, serif;
+}
+
+/* Dark theme */
+  :root:has(#theme-toggle:checked) {
+  --paper: #fbf7ef;
+  --paper-raised: #fffdf8;
+  --paper-sunk: #ebe2b3;
+  --ink: #1f2a24;
+  --ink-muted: #55605a;
+  --line: #e2d8c6;
+  --line-strong: #b4a78f;
+  --brand: #1f5c46;
+  --brand-strong: #174837;
+  --brand-tint: #dcebe3;
+  --on-brand: #ffffff;
+  --accent: #e8704f;
+  --on-accent: #1f2a24;
+  --accent-text: #a83e26;
+  --accent-tint: #fbe3da;
+  --sun: #e9b949;
+  --on-sun: #1f2a24;
+  --focus: #a83e26;
+  --danger: #b42318;
+  --danger-tint: #fde8e6;
+  --col-strong: #f3ecdf;
   }
 
 /* index.html zone  */
