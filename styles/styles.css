@@ -53,7 +53,7 @@
     --col-strong: #232d28;
   }
 
-/* ---------- Base ---------- */
+/* index.html zone  */
 * { box-sizing: border-box; }
 
 body {
@@ -66,7 +66,6 @@ body {
 
 h1, h2 { font-family: var(--font-display); font-weight: 600; }
 
-/* Shared heading and paragraph defaults. */
 h1 {
   font-family: var(--font-display);
   font-size: 3rem;
