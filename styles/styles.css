@@ -139,6 +139,62 @@ footer .brand-logo img {
   transform: translate(-1.25rem, -2.5rem);
 }
 
+/* Shared footer layout: opt in with class="site-footer".
+   Reuses the logo crop above and the current light/dark theme colours. */
+.site-footer {
+  margin-top: 3rem;
+  padding-block: 2.5rem 1.5rem;
+  border-top: 1px solid var(--line-strong);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
+.site-footer .footer-inner {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.site-footer .footer-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.site-footer h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--ink-muted);
+  overflow-wrap: anywhere;
+}
+
+.site-footer .footer-tagline { margin-top: 0.75rem; }
+.site-footer ul { margin: 0; padding: 0; list-style: none; }
+.site-footer li + li { margin-top: 0.35rem; }
+.site-footer a { text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+.site-footer li a { display: inline-block; padding-block: 0.3rem; }
+.site-footer a:hover { text-decoration: underline; }
+.site-footer a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* Credits and copyright span the full width beneath the link columns. */
+.site-footer .footer-inner > section {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer .footer-copyright {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
 .theme-switch input {
   position: absolute;
   opacity: 0;
@@ -472,29 +528,6 @@ nav a[aria-current="page"] {
 .about-site thead { background: var(--brand); color: var(--on-brand); }
 .about-site tbody tr:nth-child(even) { background: var(--paper-sunk); }
 .about-site tbody tr:hover { background: var(--brand-tint); }
-
-/* 7. Responsive layout: wrap the header first, then stack member cards.
-   rem units follow the root font size, including user font-size preferences. */
-@media (max-width: 64rem) {
-  .about-site header .container { flex-wrap: wrap; }
-  .about-site header nav { width: 100%; margin-left: 0; }
-  .about-site header nav ul { flex-wrap: wrap; }
-  .about-site header nav a { padding-inline: 1rem; }
-}
-@media (max-width: 40rem) {
-  .about-site .member-list { grid-template-columns: 1fr; }
-  .about-site .member-card { padding: 1rem; }
-  .about-site main > section { margin-top: 2rem; }
-  .about-site th,
-  .about-site td { padding: 0.75rem; }
-}
-
-/* 8. High contrast mode: use the system text colour for important borders. */
-@media (forced-colors: active) {
-  .about-site .member-card,
-  .about-site .student-id,
-  .about-site .group-photo { border-color: CanvasText; }
-}
 
 /* Jobs page */
 .jobs-page {
@@ -834,20 +867,6 @@ nav a[aria-current="page"] {
   border-color: var(--brand);
   background: var(--brand-tint);
   color: var(--brand-strong);
-}
-
-/* ---------- Footer ---------- */
-.apply-page > footer {
-  width: min(calc(100% - 3rem), 850px);
-  margin: 0 auto;
-  padding: 1.25rem 0 2rem;
-  border-top: 2px solid var(--brand);
-  color: var(--ink-muted);
-  text-align: center;
-}
-
-.apply-page > footer p {
-  margin: 0;
 }
 
 /* ---------- Responsive layout ---------- */
