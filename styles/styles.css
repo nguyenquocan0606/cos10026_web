@@ -498,6 +498,7 @@ nav a[aria-current="page"] {
 }
 
 /* Jobs page */
+/* I used AI to help with responsive font sizing with clamp(), grid layout with minmax(), @media */
 .jobs-page {
   max-width: 1100px;
   margin: 0 auto;
