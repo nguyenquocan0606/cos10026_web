@@ -240,6 +240,12 @@ footer .brand-logo img {
   transform: translateX(1.25rem);
 }
 
+/* Shared keyboard focus: outline the visible theme switch on every page. */
+.theme-switch input:focus-visible + .slider {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 header nav {
   margin-left: auto;
 }
@@ -434,13 +440,7 @@ nav a[aria-current="page"] {
 
 /* About page*/
 
-/* 1. Keyboard focus: outline the visible switch when its input has focus. */
-.about-site .theme-switch input:focus-visible + .slider {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
-/* 2. Layout and headings: centre the content and scale heading sizes.
+/* Layout and headings: centre the content and scale heading sizes.
    overflow-wrap allows long text to wrap instead of widening the page. */
 .about-site > main {
   width: min(100% - 2rem, 72rem);
@@ -459,20 +459,54 @@ nav a[aria-current="page"] {
 .about-site td,
 .about-site th { overflow-wrap: anywhere; }
 
-/* 3. Group details: indent both list levels and space the items. */
+/* Introduction and group details on the left, video on the right.
+   Flex wrapping moves the video below the text when the columns no longer fit. */
+.about-site .about-overview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.about-site .about-overview-content {
+  flex: 1.3 1 30rem;
+  min-width: 0;
+}
+
+.about-site .about-overview-content > section { margin-top: 3rem; }
+
+.about-site .about-video {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+
+.about-site .about-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.75rem;
+  background: var(--paper-raised);
+}
+
+/* Group details: indent both list levels and space the items. */
 .about-site .group-details { padding-left: 1.5rem; }
 .about-site .group-details ul { padding-left: 1.5rem; margin-top: 0.5rem; }
 .about-site .group-details li + li { margin-top: 0.25rem; }
 
-/* 4. Members: two equal columns, bordered cards and highlighted student IDs.
+/* Members: two columns that wrap to one when cards no longer fit.
    dt styles each member's name; dd removes the default definition indent. */
 .about-site .member-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
 .about-site .member-card {
+  /* Half the row minus half the gap; wrap below a readable card width.
+     On very narrow screens, the minimum never exceeds the container. */
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: min(100%, 20rem);
   padding: 1.5rem;
   border: 1px solid var(--line-strong);
   border-top: 4px solid var(--brand);
@@ -494,7 +528,7 @@ nav a[aria-current="page"] {
 
 .about-site .quote-content { color: var(--ink-muted); }
 
-/* 5. Group photo: border the figure, style its placeholder and caption. */
+/* Group photo: border the figure, style its placeholder and caption. */
 .about-site .group-photo {
   margin: 0;
   padding: 1rem;
@@ -509,7 +543,7 @@ nav a[aria-current="page"] {
 }
 .about-site figcaption { padding-top: 0.75rem; color: var(--ink-muted); }
 
-/* 6. Tables: allow sideways scrolling, join cell borders, and colour rows.
+/* Tables: join cell borders, and colour rows.
    These rules apply to both the fun-facts and schedule tables. */
 .about-site .table-scroll { max-width: 100%; overflow-x: auto; }
 .about-site table {
