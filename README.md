@@ -1,30 +1,37 @@
-# Hanoi Class 2 Group 5
-Group:  4 member
+# Edbridge by W3bb
 
-Title: Assessment 2: Applied Web Project – Part 1
+COS10026 Applied Web Project, Part 1. Edbridge is a fictional education careers website created by four students in Hanoi Class 2, Friday morning.
 
-Unit Learning Outcomes Addressed :
+## Project links
 
-    ULO1: Identify web technologies' core components and functions to establish a foundational understanding.
-    ULO2: Implement a project plan using project management strategies to organise, prioritise, and monitor tasks effectively in a web development context.
-    ULO3: Apply team frameworks, communicate and work effectively within teams using suitable verbal and technological methods.
-    ULO5: Demonstrate the use of web development technologies to develop functional web applications, incorporating professional ethics, project management skills, and security practices.
-    ULO6: Explain fundamental security principles in web development and demonstrate their implementation in basic applications.
-    ULO7: Assess ethical considerations and security practices in web development, including accessibility and user privacy.
+- [Live website](https://nguyenquocan0606.github.io/cos10026_web/)
+- [GitHub repository](https://github.com/nguyenquocan0606/cos10026_web)
+- [Jira board](https://soulknightprequel15.atlassian.net/jira/software/projects/CGW/boards/3)
 
-Individual assessment / Group assessment Group assessment (3–4 students)
+## Team
 
-Assessment type: Applied web development project (static website)
+| Member | Student ID | Main responsibilities |
+| --- | --- | --- |
+| Tran Trung Tin | 106200136 | Jira setup, About page and shared footer |
+| Nguyen Quoc An | 105550652 | Home page and GitHub Pages deployment |
+| Nguyen Chi Hien | 106393625 | Jobs page and navigation/layout review |
+| Do Dinh Phu | 105559808 | Apply page and form validation |
 
-Weighting: 40% (28% group component, 12% individual component)
+## Files and local preview
 
-Word count (or equivalent): Website project (multiple HTML & CSS files) - No Word Count
 
-Due date: Monday, Week 7 (20 Apr 2026) – 11:59pm
+- `index.html`: company introduction and hiring process.
+- `jobs.html`: two job descriptions and research references.
+- `apply.html`: application form posting to the university test endpoint.
+- `about.html`: team details, contributions and Acknowledgement of Country.
+- `styles/styles.css`: shared and page-specific styling.
+- `scripts/`: application validation and reduced-motion handling for the brand video.
+- `img/`: logo, compressed cover image and background graphics.
+- `media/video.mp4`: brand introduction video.
 
-Submission procedure: Students must submit a ZIP file containing the project code via Canvas. The website must be deployed using GitHub Pages, with the live site link and GitHub repository link included in the 
-index.html footer. A Group Agreement must be submitted before commencing the project. The Jira board must be accessible by tutor. An individual interview will be conducted during Week 6 tutorial classes.
+The email address `careers@edbridge.example` is a fictional demonstration contact. The application form is for assessment testing, not real recruitment. Search currently opens the Jobs page without filtering its listings.
 
-Feedback date: Within 2 weeks after submission
 
-Referencing style: APA 7 (where applicable)
+## Credits
+
+OpenAI Codex assisted with drafting and editing webpage content and CSS logo cropping. The logo was generated using Gemini Argon.
