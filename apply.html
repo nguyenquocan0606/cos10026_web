@@ -112,9 +112,9 @@
           type="text"
           id="first_name"
           name="first_name"
-          pattern="[A-Za-z ]{1,20}"
+          pattern="[A-Za-z]{1,20}"
           maxlength="20"
-          title="Enter up to 20 alphabetic characters."
+          title="Enter 1 to 20 letters without spaces."
           autocomplete="given-name"
           required>
       </div>
@@ -126,9 +126,9 @@
           type="text"
           id="last_name"
           name="last_name"
-          pattern="[A-Za-z ]{1,20}"
+          pattern="[A-Za-z]{1,20}"
           maxlength="20"
-          title="Enter up to 20 alphabetic characters."
+          title="Enter 1 to 20 letters without spaces."
           autocomplete="family-name"
           required>
       </div>
@@ -257,8 +257,10 @@
       </div>
 
       <!-- Skill list -->
-      <fieldset class="form-row">
+      <fieldset class="form-row" id="skills" aria-describedby="skills-hint">
         <legend>Skill list:</legend>
+
+        <p id="skills-hint" style="font-size: 0.95rem;">Select at least one skill.</p>
 
         <div class="choice-group">
           <label for="skill_html">
@@ -345,5 +347,21 @@
       <p class="footer-copyright">&copy; 2026 Edbridge &mdash; a fictional company created by W3bb for the COS10026 Web Technology Project, Swinburne University of Technology.</p>
     </div>
   </footer>
+  <script>
+    const skillInputs = document.querySelectorAll('#skills input[type="checkbox"]');
+    const firstSkill = skillInputs[0];
+
+    function validateSkillSelection() {
+      const hasSelectedSkill = Array.from(skillInputs).some((input) => input.checked);
+      firstSkill.setCustomValidity(
+        hasSelectedSkill ? "" : "Select at least one skill."
+      );
+    }
+
+    skillInputs.forEach((input) => {
+      input.addEventListener("change", validateSkillSelection);
+    });
+    validateSkillSelection();
+  </script>
 </body>
 </html>

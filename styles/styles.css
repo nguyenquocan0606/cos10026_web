@@ -1025,23 +1025,6 @@ nav a[aria-current="page"] {
 
 /* ---------- Responsive layout ---------- */
 @media (max-width: 700px) {
-  .apply-page > header {
-    padding: 1rem;
-  }
-
-  .apply-page > header nav {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .apply-page > header nav ul {
-    gap: 0.2rem;
-  }
-
-  .apply-page > header nav a {
-    padding: 0.45rem 0.75rem;
-  }
-
   .apply-page > main {
     width: calc(100% - 1.5rem);
     margin: 1.25rem auto 2rem;
@@ -1076,7 +1059,6 @@ nav a[aria-current="page"] {
 
 /* ---------- High contrast accessibility ---------- */
 @media (forced-colors: active) {
-  .apply-page > header nav a[aria-current="page"],
   .apply-page > main,
   .apply-page fieldset.form-row,
   .apply-page input,
