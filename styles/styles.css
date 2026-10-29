@@ -67,7 +67,6 @@ body {
 h1, h2 { font-family: var(--font-display); font-weight: 600; }
 
 h1 {
-  font-family: var(--font-display);
   font-size: 3rem;
   margin: 0;
 }
@@ -278,8 +277,100 @@ nav a[aria-current="page"] {
   color: var(--on-brand);
 }
 
-.container .hero_content {
-  margin-top: 5rem;
+.intro {
+  padding-block: 5rem 3rem;
+  background-image: url("../img/hero-pattern-dark.svg");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
+
+:root:has(#theme-toggle:checked) .intro {
+  background-image: url("../img/hero-pattern.svg");
+}
+
+/* Search box in the header: auto margins on both sides centre it in the
+   space between the theme switch and the nav, which stays on the right.
+   The search shrinks first so everything stays on one row. */
+.a1_search {
+  margin-inline: auto;
+  flex: 0 1 16rem;
+  min-width: 9rem;
+}
+
+.a1_search + nav {
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+/* Narrower screens: logo, theme switch and nav keep the first row,
+   the search moves to its own full-width row underneath. */
+@media (max-width: 1100px) {
+  header .container:has(.a1_search) {
+    flex-wrap: wrap;
+  }
+
+  .a1_search {
+    order: 1;
+    flex-basis: 100%;
+    margin-inline: 0;
+  }
+
+  .a1_search + nav {
+    margin-left: auto;
+  }
+}
+
+/* Label stays available to screen readers but is hidden visually */
+.a1_search label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.a1_search_row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.a1_search input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background-color: var(--paper-raised);
+  color: var(--ink);
+  font: inherit;
+}
+
+.a1_search input::placeholder {
+  color: var(--ink-muted);
+}
+
+.a1_search input:hover,
+.a1_search input:focus {
+  border-color: var(--brand);
+}
+
+.a1_search button {
+  min-height: 44px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--brand);
+  color: var(--on-brand);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.a1_search button:hover {
+  background-color: var(--brand-strong);
 }
 
 .a1_first_line {
@@ -295,11 +386,18 @@ nav a[aria-current="page"] {
   margin: auto;
 }
 
-.roles_header + ul {
-  list-style: none;
+
+.a1_cover_img {
+  float: right;
+  width: 45%;
+  margin: 0 0 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px var(--on-sun);
 }
 
 .roles_header {
+  clear: both;
+  padding-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -325,23 +423,15 @@ nav a[aria-current="page"] {
   padding: 4px 12px;
 }
 
-.a1_fe_job {
-  display: inline-block;
-  border: 1px solid var(--ink);
-  border-top: 10px solid var(--brand-strong);
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: 0 4px 20px var(--on-sun);
-}
-
+.a1_fe_job,
 .a1_ui_ux_job {
   display: inline-block;
   border: 1px solid var(--ink);
   border-top: 10px solid var(--brand-strong);
   border-radius: 20px;
   padding: 1rem;
+  background-color: var(--paper);
   box-shadow: 0 4px 20px var(--on-sun);
-
 }
 
 .a1_type_job{
@@ -369,7 +459,7 @@ nav a[aria-current="page"] {
 .a1_job_container {
   padding-top: 10px;
   display: flex;
-  flex: 1;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 4rem;
@@ -385,6 +475,7 @@ nav a[aria-current="page"] {
 .a1_meet_team {
   text-decoration: none;
   display: inline-block;
+  margin-top: 2rem;
   border: 3px solid var(--ink);
   border-radius: 20px;
   padding: 4px 12px;
@@ -434,6 +525,35 @@ nav a[aria-current="page"] {
 .a1_how p {
   margin-top: 0;
   font-family: var(--font-sans);
+}
+
+
+@media (max-width: 700px) {
+  .intro {
+    padding-top: 2.5rem;
+  }
+
+  .intro h1 {
+    font-size: 2.25rem;
+  }
+
+  .a1_cover_img {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.5rem;
+  }
+
+  .roles_header {
+    flex-wrap: wrap;
+  }
+
+  .a1_job_container,
+  .a1_why_container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
 }
 
 

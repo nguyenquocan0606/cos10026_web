@@ -17,7 +17,7 @@
   </style>
 </head>
     <body class="about-site">
-    <header>
+  <header>
     <div class="container">
       <a href="index.html" class="Edbridge">
         <span class="brand-logo"><img src="img/logo.webp" alt="" width="1024" height="1024"></span>
@@ -26,14 +26,21 @@
       <label class="theme-switch">
         <input type="checkbox" id="theme-toggle">
         <span class="slider"></span>
-        Light Mode
+          Light Mode
       </label>
+      <form class="a1_search" action="jobs.html" method="get" role="search">
+        <label for="a1_search_input">Search jobs</label>
+        <div class="a1_search_row">
+          <input type="search" id="a1_search_input" name="q" placeholder="Search jobs...">
+          <button type="submit">Search</button>
+        </div>
+      </form>
       <nav aria-label="Main">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="jobs.html">Jobs</a></li>
           <li><a href="apply.html">Apply</a></li>
-          <li><a href="about.html" aria-current="page">About us</a></li>
+          <li><a href="about.html">About us</a></li>
         </ul>
       </nav>
     </div>

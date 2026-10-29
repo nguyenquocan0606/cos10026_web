@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="some thing here">
-  <meta name="author" content="name">
-  <title>Edbirdge </title>
-  <!-- Fonts -->
+  <meta name="description" content="Edbridge careers: join the team building accessible language-learning apps for schools and adult learners.">
+  <meta name="author" content="W3bb">
+  <title>Edbridge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Fraunces:opsz,wght@9..144,600&amp;display=swap">
@@ -21,7 +20,6 @@
           }
 
           .a1_table_job_stage caption {
-            font-weight: bold;
             text-align: left;
             border: 1px solid var(--line-strong);
             border-bottom: none ;
@@ -53,7 +51,6 @@
         </style>
 </head>
 <body>
-  <!-- Header and nav bar -->
   <header>
     <div class="container">
       <a href="index.html" class="Edbridge">
@@ -65,6 +62,13 @@
         <span class="slider"></span>
           Light Mode
       </label>
+      <form class="a1_search" action="jobs.html" method="get" role="search">
+        <label for="a1_search_input">Search jobs</label>
+        <div class="a1_search_row">
+          <input type="search" id="a1_search_input" name="q" placeholder="Search jobs...">
+          <button type="submit">Search</button>
+        </div>
+      </form>
       <nav aria-label="Main">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -81,29 +85,29 @@
     <section class="intro">
       <div class="container">
         <div class="hero_content">
+          <img class="a1_cover_img" src="img/cover_img.png" alt="A globe resting on a stack of books on a sunlit study desk" width="1320" height="1192">
           <span class="a1_first_line">EDBRIDGE CAREERS &middot; NOW HIRING</span>
           <h1>Every language is a bridge</h1>
           <p class="a1_slogan">Learn a language. Open a world</p>
           <p>Edbridge is an EdTech company that builds accessible language-learning apps for schools and adult learners. Our web team designs the pages people use to practise every day, and we are growing.</p>
           <div class="roles_header">
             <p class="roles">See open roles</p>
-            <p class="number_of_job">02 open position</p>
+            <p class="number_of_job">02 open positions</p>
           </div>
           <div class="a1_job_container">
               <div class="a1_fe_job">
                 <span class="a1_type_job">01 / ENGINEERING</span>
-                <p class="a1_name_job">Front-End Web Develop</p>
-                <p class="a1_detail">Build engaging web experience that help people learn</p>
+                <p class="a1_name_job">Front-End Web Developer</p>
+                <p class="a1_detail">Build engaging web experiences that help people learn</p>
                 <a href="jobs.html" class="a1_explore">Explore role</a>
               </div>
               <div class="a1_ui_ux_job">
                 <span class="a1_type_job">02 / DESIGN</span>
                 <p class="a1_name_job">UI/UX Designer</p>
-                <p class="a1_detail">Share intuitive learning product that put people first</p>
+                <p class="a1_detail">Shape intuitive learning products that put people first</p>
                 <a href="jobs.html" class="a1_explore">Explore role</a>
               </div>
             </div>
-            <br>
             <a class="a1_meet_team" href="about.html">Meet the team</a>
         </div>
       </div>
@@ -115,7 +119,7 @@
           <h2>Why work at Edbridge</h2>
           <div class="a1_why_container">
             <div class="a1_box">
-              <h3 >Lesson for evvery learner</h3>
+              <h3 >Lessons for every learner</h3>
               <p>Our apps follow WCAG 2.2 so learners who use screen readers, keyboards or small phones can study too. You will help keep it that way.</p>
             </div>
             <div class="a1_box">
@@ -136,7 +140,7 @@
         <h2>How we hire</h2>
         <p>Our process is short and transparent. Tell us in your application if you need any adjustments at any stage.</p>
         <table class="a1_table_job_stage">
-          <caption>Edbridge hiring process, step by step</caption>
+          <caption style="font-weight: bold;">Edbridge hiring process, step by step</caption>
           <thead>
             <tr>
               <th scope="col" >Stage</th>
