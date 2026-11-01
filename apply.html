@@ -98,7 +98,7 @@
           required>
       </div>
 
-      <!-- Date of birth -->
+      <!-- Native pattern checks day/month lengths andleap years. -->
       <div class="form-row">
         <label for="date_of_birth">Date of birth:</label>
         <input
@@ -108,13 +108,13 @@
           placeholder="dd/mm/yyyy"
           maxlength="10"
           aria-describedby="dob-hint"
-          pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}"
-          title="Enter the date in dd/mm/yyyy format."
+          pattern="(?!.*/0000$)(?:(?:0[1-9]|1[0-9]|2[0-8])/(?:0[1-9]|1[0-2])/[0-9]{4}|(?:29|30)/(?:0[13-9]|1[0-2])/[0-9]{4}|31/(?:0[13578]|1[02])/[0-9]{4}|29/02/(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:[02468][048]|[13579][26])00))"
+          title="Enter a real calendar date in dd/mm/yyyy format."
           autocomplete="bday"
           required>
       </div>
 
-      <p id="dob-hint">Use dd/mm/yyyy and enter a real date that is not in the future.</p>
+      <p id="dob-hint">Use dd/mm/yyyy and enter a real calendar date.</p>
 
       <!-- Gender -->
       <fieldset class="form-row">
@@ -310,12 +310,11 @@
 
       <section aria-labelledby="credits-heading">
         <h3 id="credits-heading">GenAI sources and credits</h3>
-        <p><a href="https://openai.com/codex/">OpenAI Codex</a> assisted with drafting and editing webpage content and CSS logo cropping. Team details and task information were supplied by W3bb. The <a href="img/logo.webp">Edbridge logo</a> was generated using Gemini Argon and supplied by the team.</p>
+        <p><a href="https://openai.com/codex/">OpenAI Codex</a> assisted with drafting and editing webpage content and CSS logo cropping. Team details and task information were supplied by W3bb. The <a href="img/logo.webp">Edbridge logo and brand intro video</a> was generated using Gemini Argon and supplied by the team.</p>
       </section>
 
       <p class="footer-copyright">&copy; 2026 Edbridge &mdash; a fictional company created by W3bb for the COS10026 Web Technology Project, Swinburne University of Technology.</p>
     </div>
   </footer>
-  <script src="scripts/application.js" defer></script>
 </body>
 </html>

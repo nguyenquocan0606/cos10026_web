@@ -72,11 +72,12 @@
       </div>
 
       <div class="about-video">
-        <video id="brand-intro" muted playsinline preload="metadata" poster="img/logo.webp" aria-label="Edbridge brand introduction">
-          <source src="media/video.mp4" type="video/mp4">
+        <video id="brand-intro" autoplay muted playsinline preload="metadata" poster="img/logo.webp" aria-label="Edbridge brand introduction">
+          <source src="media/video.mp4" type="video/mp4" media="(prefers-reduced-motion: no-preference)">
           Your browser does not support embedded video.
           <a href="media/video.mp4">Download the video</a> to watch it.
         </video>
+        <img class="brand-intro-still" src="img/logo.webp" alt="Edbridge brand introduction" width="1024" height="1024">
       </div>
     </div>
 
@@ -123,14 +124,10 @@
 
     <section aria-labelledby="photo-heading">
       <h2 id="photo-heading">Together as W3bb</h2>
-      <figure class="group-photo">
-        <!-- Pending photo -->
-        <div class="photo-placeholder">
-          <p><strong>Our group photo is coming soon.</strong></p>
-          <p>One photo of the four of us, together.</p>
-        </div>
-        <figcaption>W3bb - COS10026 Hanoi Class 2. Group photograph to be provided.</figcaption>
-      </figure>
+        <figure class="group-photo">
+          <img src="img/group_photo.webp" alt="The four members of W3bb" width="1200" height="900" loading="lazy">
+          <figcaption>The W3bb team at work</figcaption>
+        </figure>
     </section>
 
     <section aria-labelledby="facts-heading">
@@ -225,25 +222,25 @@
               <th scope="row">24–25 Oct</th>
               <td>Validate all four HTML pages and check links (CGW-16)</td>
               <td>Do Dinh Phu</td>
-              <td>In progress</td>
+              <td>Done</td>
             </tr>
             <tr>
               <th scope="row">24–25 Oct</th>
               <td>Check form validation, keyboard navigation and layouts (CGW-17)</td>
               <td>Nguyen Chi Hien</td>
-              <td>In progress</td>
+              <td>Done</td>
             </tr>
             <tr>
               <th scope="row">25 Oct</th>
               <td>Deploy the site with GitHub Pages (CGW-15)</td>
               <td>Nguyen Quoc An</td>
-              <td>In progress</td>
+              <td>Done</td>
             </tr>
             <tr>
               <th scope="row">26 Oct</th>
               <td>Final team review and prepare the final ZIP (CGW-18)</td>
               <td>Whole team; Nguyen Quoc An to prepare the ZIP (proposed)</td>
-              <td>In progress</td>
+              <td>Done</td>
             </tr>
           </tbody>
         </table>
@@ -295,6 +292,5 @@
       <p class="footer-copyright">&copy; 2026 Edbridge &mdash; a fictional company created by W3bb for the COS10026 Web Technology Project, Swinburne University of Technology.</p>
     </div>
   </footer>
-  <script src="scripts/brand-intro.js" defer></script>
 </body>
 </html>
