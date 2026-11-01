@@ -33,4 +33,4 @@ The email address `careers@edbridge.example` is a fictional demonstration contac
 
 ## Credits
 
-OpenAI Codex assisted with drafting and editing webpage content and CSS logo cropping. The logo was generated using Gemini Argon.
+OpenAI Codex assisted with drafting and editing webpage content and CSS logo cropping. The logo and brand intro video was generated using Gemini Argon.
