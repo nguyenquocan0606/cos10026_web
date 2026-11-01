@@ -25,7 +25,6 @@ COS10026 Applied Web Project, Part 1. Edbridge is a fictional education careers 
 - `apply.html`: application form posting to the university test endpoint.
 - `about.html`: team details, contributions and Acknowledgement of Country.
 - `styles/styles.css`: shared and page-specific styling.
-- `scripts/`: application validation and reduced-motion handling for the brand video.
 - `img/`: logo, compressed cover image and background graphics.
 - `media/video.mp4`: brand introduction video.
 
